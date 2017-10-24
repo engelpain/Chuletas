@@ -1,0 +1,93 @@
+* Centro Nacional de Desarrollo e Investigación de Tecnologías Libres (CENDITEL)
+* CENDITEL, Mérida - Venezuela
+* Dirección de Desarrollo
+* @author Ing. Angelo Osorio
+* @date 2017-09-05 // (dd,mm,yyyy)
+* Guía para instalar y manipular Apache2 en Linux
+* Comandos probados solamente en Debian 8 (Jessie) y 9 (Stretch)
+
+
+
+// Nota del autor: [BEGIN] ---------------------------------------------------------------------- //
+Todos los comandos realizados en esta guía fueron probados solamente en Debian 8 y Debian 9
+$ = hacer la sentencia como usuario
+# = hacer la sentencia como administrador
+
+aptitude es un instalador, de no poseerlo instalado, se puede instalar así:
+# apt-get install aptitude
+
+O también:
+# apt install aptitude
+// Nota del autor: [ENDED] ---------------------------------------------------------------------- //
+
+
+
+// Instalar Apache [BEGIN] ---------------------------------------------------------------------- //
+Para instalar apache se utiliza el comando:
+# aptitude install apache2
+
+De no poseer aptitude, se puede usar:
+# apt-get install apache2
+
+O también
+# apt install apache2
+// Instalar Apache [ENDED] ---------------------------------------------------------------------- //
+
+
+
+// Controlar Apache [BEGIN] --------------------------------------------------------------------- //
+Para iniciar apache en se pueden utilizar varios comandos:
+1 - # service apache2 start
+2 - # systemctl start apache2.service
+3 - # /etc/init.d/apache2 start
+
+Para reiniciarlo también hay múltiples comandos:
+1 - # service apache2 restart
+2 - # systemctl restart apache2.service
+3 - # /etc/init.d/apache2 restart
+
+Para detenerlo se puede de tres formas:
+1 - # service apache2 stop
+2 - # systemctl stop apache2.service
+3 - # /etc/init.d/apache2 stop
+
+Para para saber su estado de ejecución se puede de tres formas:
+1 - # service apache2 status
+2 - # systemctl status apache2.service
+3 - # /etc/init.d/apache2 status
+// Controlar Apache [ENDED] --------------------------------------------------------------------- //
+
+
+
+// mod_rewrite en Apache [BEGIN] ---------------------------------------------------------------- //
+Para activar el módulo Rewrite de apache se utiliza el siguiente comando:
+# a2enmod rewrite
+
+Luego de el paso anterior se debe modificar el archivo apache2.conf
+Se puede modificar tanto desde la consola como desde un editor de texto, siempre y cuando se tenga
+permiso de superusuario, en este caso se usará nano, editor de texto desde la consola:
+# nano /etc/apache2/apache2.conf
+
+Ahora se debe buscar la línea dentro del archivo que dice AllowOverride None
+En caso de encontrar más de una, buscar la que tiene el directorio donde se
+alojan los archivos del servidor local, www en mi caso:
+<Directory /var/www/>
+	Options Indexes FollowSymLinks
+	AllowOverride None < ------------------ Esta línea es la que se debe cambiar
+	Require all granted
+</Directory>
+
+Ahora cambiamos ese None por All
+<Directory /var/www/>
+	Options Indexes FollowSymLinks
+	AllowOverride All < ------------------- Así
+	Require all granted
+</Directory>
+
+Ctrl+o y luego enter para guardar, Ctrl+x para salir.
+
+Luego se debe reiniciar el apache.
+# service apache2 restart
+
+Listo, Enjoy!
+// mod_rewrite en Apache [ENDED] ---------------------------------------------------------------- //
