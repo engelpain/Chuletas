@@ -1,0 +1,70 @@
+* Centro Nacional de Desarrollo e Investigación de Tecnologías Libres (CENDITEL)
+* CENDITEL, Mérida - Venezuela
+* Dirección de Desarrollo
+* @author Ing. Angelo Osorio
+* @date 2017-09-05 // (dd,mm,yyyy)
+* Guía para instalar y manipular Apache2 en Linux
+* Comandos probados solamente en Debian 8 (Jessie) y 9 (Stretch)
+
+
+
+// Nota del autor: [BEGIN] ---------------------------------------------------------------------- //
+Todos los comandos realizados en esta guía fueron probados solamente en Debian 8 y Debian 9
+$ = hacer la sentencia como usuario
+# = hacer la sentencia como administrador
+
+aptitude es un instalador, de no poseerlo instalado, se puede instalar así:
+# apt-get install aptitude
+
+O también:
+# apt install aptitude
+// Nota del autor: [ENDED] ---------------------------------------------------------------------- //
+
+
+
+// Instalar Postgres [BEGIN] -------------------------------------------------------------------- //
+Para instalar postgres se utiliza el comando:
+# aptitude install postgresql
+
+De no poseer aptitude, se puede usar:
+# apt-get install postgresql
+
+O también:
+# apt install postgresql
+// Instalar Postgres [ENDED] -------------------------------------------------------------------- //
+
+
+
+// Cambiar la contraseña por defecto [BEGIN] ---------------------------------------------------- //
+Para cambiar la contraseña del usuario postgres por primera vez se utiliza:
+# su postgres -c psql postgres
+
+Luego del comando anterior la barra inicial cambia a postgres=#
+Esto significa que estamos dentro de postgresql
+Ahora se cambia la contraseña usando el siguiente comando:
+postgres=# ALTER USER postgres WITH PASSWORD 'nuevacontraseña';
+
+Hay que cerrar postgres
+postgres=# \q
+
+Ahora se debe reiniciar postgres
+# /etc/init.d/postgresql restart
+// Cambiar la contraseña por defecto [ENDED] ---------------------------------------------------- //
+
+
+
+// Comandos para manipular Postgres Server [BEGIN] ---------------------------------------------- //
+# /etc/init.d/postgresql start    - Iniciar Postgres Server
+# /etc/init.d/postgresql stop     - Detener Postgres Server
+# /etc/init.d/postgresql restart  - Reiniciar Postgres Server
+// Comandos para manipular Postgres Server [ENDED] ---------------------------------------------- //
+
+
+
+// Comandos Postgres [BEGIN] -------------------------------------------------------------------- //
+postgres=# \q                     # Salir de postgres
+postgres=# \l                     # Listar las base de datos
+postgres=# \c basededatosNombre   # Cambiar a la base de datos basededatosNombre
+postgres=# \d                     # Listar las tablas
+postgres=# \d+ tablaNombre        # Describir los campos de la tabla tablaNombre
+// Comandos Postgres [ENDED] -------------------------------------------------------------------- //
