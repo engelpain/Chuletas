@@ -38,22 +38,22 @@ O también
 // Controlar Apache [BEGIN] --------------------------------------------------------------------- //
 Para iniciar apache en se pueden utilizar varios comandos:
 1 - # service apache2 start
-2 - # systemctl start apache2.service
+2 - # systemctl start apache2
 3 - # /etc/init.d/apache2 start
 
 Para reiniciarlo también hay múltiples comandos:
 1 - # service apache2 restart
-2 - # systemctl restart apache2.service
+2 - # systemctl restart apache2
 3 - # /etc/init.d/apache2 restart
 
 Para detenerlo se puede de tres formas:
 1 - # service apache2 stop
-2 - # systemctl stop apache2.service
+2 - # systemctl stop apache2
 3 - # /etc/init.d/apache2 stop
 
 Para para saber su estado de ejecución se puede de tres formas:
 1 - # service apache2 status
-2 - # systemctl status apache2.service
+2 - # systemctl status apache2
 3 - # /etc/init.d/apache2 status
 // Controlar Apache [ENDED] --------------------------------------------------------------------- //
 
@@ -73,14 +73,14 @@ En caso de encontrar más de una, buscar la que tiene el directorio donde se
 alojan los archivos del servidor local, www en mi caso:
 <Directory /var/www/>
 	Options Indexes FollowSymLinks
-	AllowOverride None < ------------------ Esta línea es la que se debe cambiar
+	AllowOverride None <-- Esta línea es la que se debe cambiar
 	Require all granted
 </Directory>
 
 Ahora cambiamos ese None por All
 <Directory /var/www/>
 	Options Indexes FollowSymLinks
-	AllowOverride All < ------------------- Así
+	AllowOverride All <-- Así
 	Require all granted
 </Directory>
 
@@ -89,5 +89,5 @@ Ctrl+o y luego enter para guardar, Ctrl+x para salir.
 Luego se debe reiniciar el apache.
 # service apache2 restart
 
-Listo, Enjoy!
+Y así se termina el proceso.
 // mod_rewrite en Apache [ENDED] ---------------------------------------------------------------- //
