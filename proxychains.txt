@@ -22,10 +22,13 @@ Proxychains es una aplicación que nos permite hacer conexión a través de cade
 // Instalar Proxychains [BEGIN] ----------------------------------------------------------------- //
 Para instalar proxychains se utilza el comando:
   # aptitude install proxychains
+
 En caso de no poseer aptitude instalado:
   # apt-get install proxychains
+
 O también:
   # apt install proxychains
+
 // Instalar Proxychains [ENDED] ----------------------------------------------------------------- //
 
 
@@ -35,6 +38,7 @@ Para configurar proxychains hay que entrar en su archivo de configuración con u
 (nano, vim, vi, gedit, sublime text, etc) con permisos de superusuario, en este caso se usará el
 editor de texto de consola nano:
   # nano /etc/proxychains.conf
+
 Ahora mostrará el archivo de configuración donde muestra la versión de la aplicación e información.
 Proxychains tiene tres configuraciones seleccionables para encadenar los proxies:
 Strict_chain: Recorre la lista de proxies por orden y si uno está caído para.
@@ -82,4 +86,5 @@ socks5 192.168.0.1 8080
 Ya configurado solamente hay que escribir desde la consola el comando proxychains más el nombre del
 navegador, en este caso firefox:
   $ proxychains firefox
+
 // Utilizar Proxychains [ENDED] ----------------------------------------------------------------- //
