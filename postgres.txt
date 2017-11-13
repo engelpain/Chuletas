@@ -13,61 +13,96 @@ Todos los comandos realizados en esta guía fueron probados solamente en Debian 
 $ = hacer la sentencia como usuario
 # = hacer la sentencia como administrador
 
-aptitude es un instalador, de no poseerlo instalado, se puede instalar así:
-# apt-get install aptitude
+Aptitude es un instalador más descriptivo que apt-get, esta guía utiliza aptitude para instalar
+PostgreSQL, de no poseerlo instalado y quisiera instalarlo, sólo hay que usar el comando:
+  # apt-get install aptitude
 
 O también:
-# apt install aptitude
+  # apt install aptitude
 // Nota del autor: [ENDED] ---------------------------------------------------------------------- //
 
 
 
 // Instalar Postgres [BEGIN] -------------------------------------------------------------------- //
 Para instalar postgres se utiliza el comando:
-# aptitude install postgresql
+  # aptitude install postgresql
 
 De no poseer aptitude, se puede usar:
-# apt-get install postgresql
+  # apt-get install postgresql
 
 O también:
-# apt install postgresql
+  # apt install postgresql
 // Instalar Postgres [ENDED] -------------------------------------------------------------------- //
+
+
+
+// Comandos para manipular Postgres Server [BEGIN] ---------------------------------------------- //
+Iniciar Postgres Server:
+  # /etc/init.d/postgresql start
+O también:
+  # service postgresql start
+Además se puede usar:
+  # systemctl start postgresql
+
+Detener Postgres Server:
+  # /etc/init.d/postgresql stop
+O también:
+  # service postgresql stop
+Además se puede usar:
+  # systemctl stop postgresql
+
+Reiniciar Postgres Server:
+  # /etc/init.d/postgresql restart
+O también:
+  # service postgresql restart
+Además se puede usar:
+  # systemctl restart postgresql
+
+
+Verificar el estado de Postgres Server:
+  # /etc/init.d/postgresql status
+O también:
+  # service postgresql status
+Además se puede usar:
+  # systemctl status postgresql
+// Comandos para manipular Postgres Server [ENDED] ---------------------------------------------- //
 
 
 
 // Cambiar la contraseña por defecto [BEGIN] ---------------------------------------------------- //
 Para cambiar la contraseña del usuario postgres por primera vez se utiliza:
-# su postgres -c psql postgres
+  # su postgres -c psql postgres
 
 Luego del comando anterior la barra inicial cambia a postgres=#
 Esto significa que estamos dentro de postgresql
 Ahora se cambia la contraseña usando el siguiente comando:
-postgres=# ALTER USER postgres WITH PASSWORD 'nuevacontraseña';
+  postgres=# ALTER USER postgres WITH PASSWORD 'nuevacontraseña';
 
 Hay que cerrar postgres
-postgres=# \q
+  postgres=# \q
 
 Ahora se debe reiniciar postgres
-# /etc/init.d/postgresql restart
+  # /etc/init.d/postgresql restart
 // Cambiar la contraseña por defecto [ENDED] ---------------------------------------------------- //
 
 
 
-// Comandos para manipular Postgres Server [BEGIN] ---------------------------------------------- //
-# /etc/init.d/postgresql start    - Iniciar Postgres Server
-# /etc/init.d/postgresql stop     - Detener Postgres Server
-# /etc/init.d/postgresql restart  - Reiniciar Postgres Server
-// Comandos para manipular Postgres Server [ENDED] ---------------------------------------------- //
+// Comandos PostgreSQL [BEGIN] ------------------------------------------------------------------ //
+Listar las base de datos
+  postgres=# \l
 
+Cambiar a la base de datos basededatosNombre
+  postgres=# \c basededatosNombre
 
+Listar las tablas
+  postgres=# \d
 
-// Comandos Postgres [BEGIN] -------------------------------------------------------------------- //
-postgres=# \q                     # Salir de postgres
-postgres=# \l                     # Listar las base de datos
-postgres=# \c basededatosNombre   # Cambiar a la base de datos basededatosNombre
-postgres=# \d                     # Listar las tablas
-postgres=# \d+ tablaNombre        # Describir los campos de la tabla tablaNombre
-// Comandos Postgres [ENDED] -------------------------------------------------------------------- //
+Describir los campos de la tabla tablaNombre
+  postgres=# \d+ tablaNombre
+
+Salir de PostgreSQL
+  postgres=# \q
+// Comandos PostgreSQL [ENDED] ------------------------------------------------------------------ //
 
 
 
@@ -76,34 +111,91 @@ Para entrar en Postgres hay que primero cambiar al usuario Postgres
 Nota: "user@user:~$" es referencial, para que se note el cambio de usuario
 
 Usando el comando:
-user@user:~$ sudo su postgres
-[sudo] password for user: ***Contraseña de superusuario user***
+  user@user:~$ sudo su postgres
+  [sudo] password for user: ***Contraseña de superusuario user***
 
 Ahora que cambió el usuario se usa el comando psql para entrar a PostgreSQL
-postgres@user:/home/user$ psql
+  postgres@user:/home/user$ psql
 
 El puntero de usuario cambiará a decir:
-postgres=#
+  postgres=#
 Significando que se entró con éxito a PostgreSQL
-
 // Entrar en PostgreSQL [ENDED] ----------------------------------------------------------------- //
 
 
 
 // Manipular una base de datos [BEGIN] ---------------------------------------------------------- //
-Para crear una base de datos con un nombre como "ejemplo" en PostgreSQL se utiliza el comando:
-postgres=# CREATE DATABASE ejemplo
+Crear base de datos:
+  postgres=# CREATE DATABASE db;
 
-Para eliminar una base de datos con un nombre como "ejemplo" en PostgreSQL se utiliza el comando:
-postgres=# DROP DATABASE ejemplo
+Eliminar base de datos:
+  postgres=# DROP DATABASE db;
 
+Cambiar a la base de datos recién creada:
+  postgres=# \c db
+
+Crear tabla:
+  db=# CREATE TABLE tablaname;
+
+Eliminar tabla:
+  db=# DROP TABLE tablaname;
+
+Crear una tabla con atributos:
+- Nombre de la tabla: usuarios
+- Atributos de la tabla:
+  - id: tipo entero, auto incrementable, será la llave primaria, no nulo, único.
+  - nombre: tipo varchar, de 25 caracteres de largo, único, no nulo.
+Entonces la sentencia sería:
+  db=# CREATE TABLE usuarios (nombre VARCHAR(30) NOT NULL UNIQUE, id SERIAL NOT NULL UNIQUE PRIMARY KEY);
+
+
+Modificar una tabla:
+  * Cambiar el nombre de una tabla:
+    db=# ALTER TABLE tabla_nombre RENAME TO nuevo_nombre;
+
+  * Agregar un campo:
+    db=# ALTER TABLE tabla_name ADD nombre_campo tipo_atributo restricción_atributo;
+
+  * Modificar un campo:
+    db=# ALTER TABLE table_name ALTER COLUMN nombre_campo TYPE tipo_atributo;
+
+  * Eliminar un campo:
+    db=# ALTER TABLE tabla_name DROP COLUMN nombre_campo;
+
+  * Agregar la restricción no nulo al campo:
+    db=# ALTER TABLE table_name ALTER COLUMN nombre_campo SET NOT NULL;
+  * Eliminar la restricción no nulo al campo:
+    db=# ALTER TABLE table_name ALTER COLUMN nombre_campo SET NOT NULL;
+
+  * Agregar la restricción único al campo (o campos):
+    db=# ALTER TABLE table_name ADD CONSTRAINT MyUniqueConstraint UNIQUE(column1, column2...);
+  * Eliminar la restricción único al campo(s):
+    db=# ALTER TABLE table_name DROP CONSTRAINT MyUniqueConstraint;
+
+  * Agregar una llave primaria
+    db=# ALTER TABLE table_name ADD PRIMARY KEY (MyPrimaryKey);
+  * Eliminar una llave primaria
+    db=# ALTER TABLE table_name DROP CONSTRAINT MyPrimaryKey;
 // Manipular una base de datos [ENDED] ---------------------------------------------------------- //
+
+
+
+// Usuarios [BEGIN] ----------------------------------------------------------------------------- //
+Crear Usuario
+  CREATE USER usuario WITH PASSWORD 'root123qwe';
+
+Eliminar usuario
+  DROP USER usuario;
+
+Asignarle rol de superusuario a un usuario
+  ALTER ROLE usuario WITH SUPERUSER;  
+// Usuarios [ENDED] ----------------------------------------------------------------------------- //
 
 
 
 // Exportar una base de datos [BEGIN] ----------------------------------------------------------- //
 Para exportar una base de datos desde PostgreSQL se utiliza el comando:
-$ pg_dump -U username -W -h host basename > basename.sql
+  $ pg_dump -U username -W -h host basename > basename.sql
 
 Explicando paso a paso: 
 $ pg_dump       Declara que se exportará una base de datos de PostgreSQL
@@ -119,7 +211,7 @@ La base de datos está en un servidor local
 El usuario propietario de la base de datos es antares
 Se quiere guardar el archivo en la carpeta del servidor con el nombre respaldo
 Por lo tanto, el comando a utilizar será:
-$ pg_dump -U antares -W -h localhost entidades > /var/www/html/respaldo.sql
+  $ pg_dump -U antares -W -h localhost entidades > /var/www/html/respaldo.sql
 
 // Exportar una base de datos [ENDED] ----------------------------------------------------------- //
 
@@ -127,10 +219,10 @@ $ pg_dump -U antares -W -h localhost entidades > /var/www/html/respaldo.sql
 
 // Importar una base de datos [BEGIN] ----------------------------------------------------------- //
 Para importar una base de datos en PostgreSQL, primero hay que crearla:
-$
+  $ CREATE DATABASE nombre_base;
 
 Para importar una base de datos desde PostgreSQL se utiliza el comando:
-$ psql -U username -W -h host nombre_base < dump_base.sql
+  $ psql -U username -W -h host nombre_base < dump_base.sql
 
 Explicando paso a paso: 
 $ psql          Declara que se importará una base de datos usando PostgreSQL
@@ -143,5 +235,5 @@ nombre_base     Nombre de la base de datos que se va a exportar
 Ejemplo:
 Si se quisiera importar la base de datos que se exportó en el punto anterior, se usaría el siguiente
 comando:
-$ psql -U postgres -W -h localhost nombre_base < dump_base.sql
+  $ psql -U postgres -W -h localhost nombre_base < dump_base.sql
 // Importar una base de datos [ENDED] ----------------------------------------------------------- //
