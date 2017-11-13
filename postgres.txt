@@ -237,3 +237,5 @@ Si se quisiera importar la base de datos que se exportó en el punto anterior, s
 comando:
   $ psql -U postgres -W -h localhost nombre_base < dump_base.sql
 // Importar una base de datos [ENDED] ----------------------------------------------------------- //
+
+<img src="https://www.nanotutoriales.com/uploads/thumbs/como-crear-un-usuario-y-asignarle-permisos-en-postgresql/single_03.jpg" alt="postgres">
