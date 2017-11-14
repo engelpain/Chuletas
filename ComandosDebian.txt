@@ -3,7 +3,7 @@
 * Dirección de Desarrollo
 * @author Ing. Angelo Osorio
 * @date 2017-09-05 // (dd,mm,yyyy)
-* Guía para instalar y manipular Apache2 en Linux
+* Guía para aprender comandos de Debian
 * Comandos probados solamente en Debian 8 (Jessie) y 9 (Stretch)
 
 
