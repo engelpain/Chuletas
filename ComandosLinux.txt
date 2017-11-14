@@ -1,0 +1,97 @@
+* Centro Nacional de Desarrollo e Investigación de Tecnologías Libres (CENDITEL)
+* CENDITEL, Mérida - Venezuela
+* Dirección de Desarrollo
+* @author Ing. Angelo Osorio
+* @date 2017-09-05 // (dd,mm,yyyy)
+* Guía para instalar y manipular Apache2 en Linux
+* Comandos probados solamente en Debian 8 (Jessie) y 9 (Stretch)
+
+
+
+// Nota del autor: [BEGIN] ---------------------------------------------------------------------- //
+$ = hacer la sentencia como usuario
+# = hacer la sentencia como administrador
+// Nota del autor: [ENDED] ---------------------------------------------------------------------- //
+
+
+
+// Gestionar Servicios [BEGIN] ------------------------------------------------------------------ //
+Iniciar un servicio:
+  # systemctl start servicio
+También se puede iniciar usando:
+  # /etc/init.d/servicio start
+Además de ello también se puede usar el comando:
+  # service servicio start
+
+Detener un servicio:
+  # systemctl stop servicio
+También se puede detener usando:
+  # /etc/init.d/servicio stop
+Además de ello también se puede usar el comando:
+  # service servicio stop
+
+Revisar el estado de un servicio:
+  # systemctl status servicio
+También se puede detener usando:
+  # /etc/init.d/servicio status
+Además de ello también se puede usar el comando:
+  # service servicio status
+
+El comando systemctl también puede verifica si un servicio está activo con el comando:
+  # systemctl is-active servicio.service
+// Gestionar Servicios [ENDED] ------------------------------------------------------------------ //
+
+
+
+// Gestionar unidades externas [BEGIN] ---------------------------------------------------------- //
+Para montar una unidad externa, por ejemplo un pendrive, se utiliza el comando:
+  $ mount /media/usuario/nombreunidad
+El comando mount también sirve para montar directorios dentro de sistemas enjaulados
+
+Para expulsar una unidad externa, por ejemplo un pendrive, se utiliza el comando:
+  $ umount /media/usuario/nombreunidad
+
+// Gestionar unidades externas [ENDED] ---------------------------------------------------------- //
+
+
+
+// Crear comandos personalizados [BEGIN] -------------------------------------------------------- //
+Nota Importante:
+Debian posee dos archivos ~/.bashrc el del usuario y el del root, dependiendo de con que permisos se
+quiera ejecutar ese alias se debe modificar el ~/.bashrc como usuario o como root.
+
+Para personalizar un comando en Debian se debe modificar el archivo ~/.bashrc con un editor de texto
+desde la consola, por ejemplo: nano, vi o vim, en este caso se usará nano:
+  $ nano ~/.bashrc
+
+Dentro del archivo al final hay que agregar:
+alias palabra_corta='comando o palabras a reemplazar'
+
+// Crear comandos personalizados [ENDED] -------------------------------------------------------- //
+
+
+
+// Rsync [BEGIN] -------------------------------------------------------------------------------- //
+Paquete utilizado para realizar copias de respaldo de archivos y/o carpetas a través de la consola
+mostrando en tiempo real el estado de la operación, el porcentaje de la carga y el archivo que está
+respaldando. También es utilizado simplemente para copiar carpetas.
+
+- Copiar una carpeta
+$ rsync -P -r nombrecarpeta /ruta/donde/copiará/
+
+// Rsync [ENDED] -------------------------------------------------------------------------------- //
+
+
+
+// Recursos del sistema [BEGIN] ----------------------------------------------------------------- //
+Para mostrar los recursos que ese están utilizando en el sistema se utiliza el comando:
+  $ top
+
+Top mejorado
+  # aptitude install htop
+  $ htop
+
+Liberar espacio en la memoria RAM
+  # sysctl -w vm.drop_caches=3
+
+// Recursos del sistema [ENDED] ----------------------------------------------------------------- //
