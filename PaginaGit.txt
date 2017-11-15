@@ -2,7 +2,7 @@
 * CENDITEL, Mérida - Venezuela
 * Dirección de Desarrollo
 * @author Ing. Angelo Osorio
-* @date 05-09-2017 // (dd,mm,yyyy)
+* @date 15-11-2017 // (dd,mm,yyyy)
 * Guía para crear una página para un repositorio GitHub
 * Comandos probados sólo en Debian 8 (Jessie) y 9 (Stretch)
 
