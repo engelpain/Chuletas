@@ -2,14 +2,33 @@
 * CENDITEL, Mérida - Venezuela
 * Dirección de Desarrollo
 * @author Ing. Angelo Osorio
-* @date 05-09-2017 // (dd,mm,yyyy)
+* @date 20-11-2017 // (dd,mm,yyyy)
 * Guía de utilización de VIM Editor
+* Comandos probados en Debian 9
+
+
+// Nota del autor: [BEGIN] ---------------------------------------------------------------------- //
+$ = hacer la sentencia como usuario
+# = hacer la sentencia como administrador
+// Nota del autor: [ENDED] ---------------------------------------------------------------------- //
+
+
+// Instalar VIM [BEGIN] ------------------------------------------------------------------------- //
+Instalar VIM en Debian
+  # apt install vim
+O también
+  # apt-get install vim
+
+Instalar VIM en Debian con aptitude
+  # aptitude install vim
+
+// Instalar VIM [BEGIN] ------------------------------------------------------------------------- //
 
 
 
 // Comandos VIM [BEGIN] ------------------------------------------------------------------------- //
 Ejecutar VIM:
-  $ vim /ruta/archivo.extension
+  $ vim /ruta/archivo.extensión
 
 VIM posee dos modos de operación, modo de comandos e inseción de texto, por defecto se entra en modo
 de comandos.
