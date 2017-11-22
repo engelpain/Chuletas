@@ -22,7 +22,7 @@ O también
 Instalar VIM en Debian con aptitude
   # aptitude install vim
 
-// Instalar VIM [BEGIN] ------------------------------------------------------------------------- //
+// Instalar VIM [ENDED] ------------------------------------------------------------------------- //
 
 
 
