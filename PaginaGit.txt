@@ -4,11 +4,12 @@
 * @author Ing. Angelo Osorio
 * @date 15-11-2017 // (dd,mm,yyyy)
 * Guía para crear una página para un repositorio GitHub
-* Comandos probados sólo en Debian 8 (Jessie) y 9 (Stretch)
+* Comandos probados sólo en Debian
 
-// Guía para páginas en Git [BEGIN] ------------------------------------------------------------- //
 
-1. Crea un repositorio en GitHub llamado username.github.io cambiando username por el nombre de
+
+// ------------------------------ Guía para páginas en Git [BEGIN] ------------------------------ //
+1. Crear un repositorio en GitHub llamado username.github.io cambiando username por el nombre de
 usuario que se posee en GitHub.
 
 2. Clonar el repositorio:
@@ -26,5 +27,4 @@ usuario que se posee en GitHub.
   $ git push -u origin master
 
 6. Con el navegador de su preferencia entre a username.github.io
-
-// Guía para páginas en Git [ENDED] ------------------------------------------------------------- //
+// ------------------------------ Guía para páginas en Git [ENDED] ------------------------------ //
