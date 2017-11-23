@@ -4,53 +4,50 @@
 * @author Ing. Angelo Osorio
 * @date 05-09-2017 // (dd,mm,yyyy)
 * Guía de manipulación de paquetes en Debian
-* Comandos probados solamente en Debian 8 (Jessie) y 9 (Stretch)
+* Comandos probados sólo en Debian
 
 
 
-// Nota del autor: [BEGIN] ---------------------------------------------------------------------- //
-$ = hacer la sentencia como usuario
-# = hacer la sentencia como administrador
-// Nota del autor: [ENDED] ---------------------------------------------------------------------- //
+// ----------------------------------- Nota del autor: [BEGIN] ---------------------------------- //
+El símbolo al principio de una línea de comandos indica:
+  $ = hacer la sentencia como usuario
+  # = hacer la sentencia como administrador
+// ----------------------------------- Nota del autor: [ENDED] ---------------------------------- //
 
 
 
-// Cambiar repositorios [BEGIN] ----------------------------------------------------------------- //
+// -------------------------------- Cambiar repositorios [BEGIN] -------------------------------- //
 Para agregar o remover repositorios se debe modificar el archivo source.list ubicado en la ruta
-/etc/apt/
+  /etc/apt/source.list
+
 Así se modificaría desde la consola utilizando el editor nano:
-# nano /etc/apt/sources.list
-// Cambiar repositorios [ENDED] ----------------------------------------------------------------- //
+  # nano /etc/apt/sources.list
+// -------------------------------- Cambiar repositorios [ENDED] -------------------------------- //
 
 
 
-// Paquetes Útiles [BEGIN] ---------------------------------------------------------------------- //
-aptitude     <-- Gestor de archivos mejor a apt y apt-get
-sudo         <-- Utilizado para darle permisos de superusuario al usuario que inició sesión
-screenfetch  <-- Imprime en consola el logo del sistema operativo y las caracteristicas del equipo
-terminator   <-- Terminal con buenas características para codificación ágil
-vim          <-- Editor de texto en consola
-youtube-dl   <-- Descarga videos de YouTube en una variedad de formatos
-// Paquetes Útiles [ENDED] ---------------------------------------------------------------------- //
+// ----------------------------------- Paquetes Útiles [BEGIN] ---------------------------------- //
+* aptitude: Gestor de archivos mejor a apt y apt-get
+* sudo: Utilizado para darle permisos de superusuario al usuario que inició sesión
+* screenfetch: Imprime en consola el logo del sistema operativo y las caracteristicas del equipo
+* terminator: Terminal con buenas características para codificación ágil
+* vim: Editor de texto en consola
+* youtube-dl: Descarga videos de YouTube en una variedad de formatos
+// ----------------------------------- Paquetes Útiles [ENDED] ---------------------------------- //
 
 
 
 
-// Búsqueda de paquetes con aptitude [BEGIN] ---------------------------------------------------- //
-Para verificar los paquetes disponibles en el repositorio se utiliza:
-# apt-get search nombreDelPaquete
-O también
-# apt search nombreDelPaquete
-
-Nota: Aptitude es un manejador de interfaz de alto nivel para la gestión de paquetes, es la versión
-mejorada de apt, por tanto es mejor para buscar resultados en los repositorios. Se debe instalar
+// -------------------------- Búsqueda de paquetes con aptitude [BEGIN] ------------------------- //
+Aptitude es un manejador de interfaz de alto nivel para la gestión de paquetes, es la versión
+mejorada de apt-get, por tanto es mejor para buscar resultados en los repositorios. Se debe instalar
 aptitude si se quiere utilizar la búsqueda que explica el siguiente punto.
 
 Para verificar los paquetes disponibles en el repositorio se utiliza:
-# aptitude search nombreDelPaquete
+  # aptitude search nombreDelPaquete
 
-La búsqueda arrojará todos los paquetes disponibles en el repositorio con una
-letra antepuesta, esta tiene los siguientes significados:
+La búsqueda arrojará todos los paquetes disponibles en el repositorio con una letra antepuesta, ésta
+tiene los siguientes significados:
 
 p   Paquete disponible en el repositorio
 i   Paquete instalado en la máquina
@@ -61,49 +58,54 @@ c   Paquete corrupto
 Utilizando aptitude search y ~x (donde x es la letra que determina la disponibilidad del paquete,
 que se mostró en el paso anterior)
 Ejemplos:
-# aptitude search ~c = Mostrará todos los paquetes corruptos del sistema 
-# aptitude search ~i = Mostrará todos los paquetes instalados del sistema
 
-Utilizando el comando grep se puede reducir la búsqueda aún más:
-# aptitude search ~c | grep ejemplo = Mostrará todos los paquetes corruptos del sistema que tengan
-                                      como nombre ejemplo
-// Búsqueda de paquetes con aptitude [ENDED] ---------------------------------------------------- //
+* Mostrar todos los paquetes corruptos del sistema 
+  # aptitude search ~c
+
+* Mostrar todos los paquetes instalados del sistema
+  # aptitude search ~i
+
+* Utilizando el comando grep se puede reducir la búsqueda aún más:
+  # aptitude search ~c | grep ejemplo
+Mostrará todos los paquetes corruptos del sistema que tengan como nombre ejemplo
+// -------------------------- Búsqueda de paquetes con aptitude [ENDED] ------------------------- //
 
 
 
-// Instalación de paquetes [BEGIN] -------------------------------------------------------------- //
+// ------------------------------- Instalación de paquetes [BEGIN] ------------------------------ //
 Para instalar un paquete se utiliza:
-# apt-get install nombreDelPaquete
-O también
-# apt install nombreDelPaquete
-Y también
-# aptitude install nombreDelPaquete
+Forma 1: # apt-get install nombreDelPaquete
+Forma 2: # apt install nombreDelPaquete
+Forma 3: # aptitude install nombreDelPaquete
 
 Es conveniente realizar primero la búsqueda del paquete para saber si está disponible en el
 repositorio antes de instalarlo, dado que no se puede instalar lo que no está disponible.
 
 Para instalar un paquete descargado y que sea de extensión .deb (paquete debian) se utiliza el 
 paquete dpkg, que es el instalador de debian, con la siguiente sentencia:
-# dpkg -i nombreDelPaquete.deb
+
+  # dpkg -i nombreDelPaquete.deb
 
 El -i es de install (también se puede utilizar -install para instalar) dado que dpkg sirve también
 para desinstalar (con -r o -remove ) y verificar si ya está instalado el paquete
-(usando -l | grep 'nombreDelPaquete')
+  (usando -l | grep 'nombreDelPaquete')
 
-Ejemplo de remove:
-# dpkg -r paquete.deb
+Instalar un paquete con dpkg:
+  # dpkg -i paquete.deb
 
-Ejemplo de verificar:
-# dpkg -l | grep 'Chrome'
-// Instalación de paquetes [ENDED] -------------------------------------------------------------- //
+Desinstalar un paquete con dpkg:
+  # dpkg -r paquete.deb
+
+Verificar un paquete con dpkg:
+  # dpkg -l | grep 'Chrome'
+// ------------------------------- Instalación de paquetes [ENDED] ------------------------------ //
 
 
 
-// Desinstalar de paquetes [BEGIN] -------------------------------------------------------------- //
+// ------------------------------- Desinstalar de paquetes [BEGIN] ------------------------------ //
 Para desinstalar un programa instalado a través de la consola se usa el comando:
-# aptitude remove nombreDelPaquete
+  # aptitude remove nombreDelPaquete
 
 Luego de ello siempre es bueno utilizar el comando para liberar el espacio del disco:
-# aptitude autoclean
-
-// Desinstalar de paquetes [ENDED] -------------------------------------------------------------- //
+  # aptitude autoclean
+// ------------------------------- Desinstalar de paquetes [ENDED] ------------------------------ //
