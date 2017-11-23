@@ -7,18 +7,15 @@
 
 
 
-// Nota del autor: [BEGIN] ---------------------------------------------------------------------- //
-
+// ----------------------------------- Nota del autor [BEGIN] ----------------------------------- //
 El símbolo al principio de una línea de comandos indica:
   $ = hacer la sentencia como usuario
   # = hacer la sentencia como administrador
-
-// Nota del autor: [ENDED] ---------------------------------------------------------------------- //
-
+// ----------------------------------- Nota del autor [ENDED] ----------------------------------- //
 
 
-// Gestionar Servicios [BEGIN] ------------------------------------------------------------------ //
 
+// --------------------------------- Gestionar Servicios [BEGIN] -------------------------------- //
 * Iniciar un servicio:
 Forma 1:  # systemctl start servicio
 Forma 2:  # /etc/init.d/servicio start
@@ -41,13 +38,11 @@ Forma 3:  # service servicio status
 
 * Revisar si está activo un servicio:
   # systemctl is-active servicio
-
-// Gestionar Servicios [ENDED] ------------------------------------------------------------------ //
-
+// --------------------------------- Gestionar Servicios [ENDED] -------------------------------- //
 
 
-// Gestionar unidades externas [BEGIN] ---------------------------------------------------------- //
 
+// ----------------------------- Gestionar unidades externas [BEGIN] ---------------------------- //
 Para montar una unidad externa o directorio, por ejemplo un pendrive, se utiliza el comando:
   $ mount /media/usuario/nombreunidad
 El comando mount también sirve para montar directorios dentro de sistemas enjaulados.
@@ -55,14 +50,12 @@ El comando mount también sirve para montar directorios dentro de sistemas enjau
 Para expulsar una unidad externa, por ejemplo un pendrive, se utiliza el comando:
   $ umount /media/usuario/nombreunidad
 De igual forma a mount, umount sirve para desmontar directorios de jaulas.
-
-// Gestionar unidades externas [ENDED] ---------------------------------------------------------- //
-
+// ----------------------------- Gestionar unidades externas [ENDED] ---------------------------- //
 
 
-// Crear comandos personalizados [BEGIN] -------------------------------------------------------- //
 
-Nota Importante:
+// ---------------------------- Crear comandos personalizados [BEGIN] --------------------------- //
+* Nota Importante:
 Debian posee dos archivos .bashrc
 Uno del usuario y otro de root, dependiendo del usuario con el que se quiera ejecutar ese alias se
 debe modificar el .bashrc como usuario o como root.
@@ -75,14 +68,12 @@ desde la consola, por ejemplo: nano, vi o vim, en este caso se usará nano:
   $ nano ~/.bashrc
 
 Dentro del archivo al final hay que agregar:
-alias palabra_corta='comando palabras o ruta a ejecutar'
-
-// Crear comandos personalizados [ENDED] -------------------------------------------------------- //
-
+  alias palabra_corta='comando palabras o ruta a ejecutar'
+// ---------------------------- Crear comandos personalizados [ENDED] --------------------------- //
 
 
-// Rsync [BEGIN] -------------------------------------------------------------------------------- //
 
+// ---------------------------------------- Rsync [BEGIN] --------------------------------------- //
 Paquete utilizado para realizar copias de respaldo de archivos y/o carpetas a través de la consola
 mostrando en tiempo real el estado de la operación, el porcentaje de la carga y el archivo que está
 respaldando. También es utilizado simplemente para copiar carpetas.
@@ -92,11 +83,10 @@ respaldando. También es utilizado simplemente para copiar carpetas.
 
 El argumento -P es para que muestre el estado del copiado
 El argumento -r es para que sea recursivo el copiado
+// ---------------------------------------- Rsync [ENDED] --------------------------------------- //
 
-// Rsync [ENDED] -------------------------------------------------------------------------------- //
 
-
-// Recursos del sistema [BEGIN] ----------------------------------------------------------------- //
+// -------------------------------- Recursos del sistema [BEGIN] -------------------------------- //
 Para mostrar los recursos que ese están utilizando en el sistema se utiliza el comando:
   $ top
 
@@ -106,5 +96,4 @@ Top mejorado
 
 Liberar espacio en la memoria RAM
   # sysctl -w vm.drop_caches=3
-
-// Recursos del sistema [ENDED] ----------------------------------------------------------------- //
+// -------------------------------- Recursos del sistema [ENDED] -------------------------------- //
