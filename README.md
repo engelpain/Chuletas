@@ -9,4 +9,3 @@ Chuletas de comandos varios, en varios lenguajes de programación, Sistemas Oper
 <a href="https://github.com/engelpain/Chuletas/blob/master/proxychains.txt">Guía de Proxychains</a> <br>
 <a href="https://github.com/engelpain/Chuletas/blob/master/Vim.txt">Guía de VIM</a> <br>
 <a href="https://github.com/engelpain/Chuletas/blob/master/puertos.txt">Guía puertos de programas</a>
-
