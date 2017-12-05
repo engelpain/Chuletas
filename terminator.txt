@@ -1,0 +1,97 @@
+* Centro Nacional de Desarrollo e Investigación de Tecnologías Libres (CENDITEL)
+* CENDITEL, Mérida - Venezuela
+* Dirección de Desarrollo
+* @author Ing. Angelo Osorio
+* @date 05-12-2017 // (dd,mm,yyyy)
+* Guía sobre comandos de Terminator en Debian
+
+// ----------------------------------- Nota del Autor [BEGIN] ----------------------------------- //
+
+El símbolo al principio de una línea de comandos indica:
+  $ = hacer la sentencia como usuario
+  # = hacer la sentencia como administrador
+
+
+Terminator es una terminal que permite manipular su layout para abrir terminales adicionales en la
+misma ventana.
+
+// ----------------------------------- Nota del Autor [BEGIN] ----------------------------------- //
+
+
+
+// --------------------------------- Instalar Terminator [BEGIN] -------------------------------- //
+
+Basta con el comando:
+  # apt install terminator
+
+De poseer aptitude:
+  # aptitude install terminator
+
+// --------------------------------- Instalar Terminator [ENDED] -------------------------------- //
+
+
+
+
+// ------------------------------- Comandos de Terminator [BEGIN] ------------------------------- //
+
+* Texto
+
+Ctrl + Shift + C        | Copiar lo seleccionado al portapapeles
+------------------------------------------------------------------------------------------------- //
+Ctrl + Shift + V        | Pegar texto del portapapeles
+------------------------------------------------------------------------------------------------- //
+Ctrl + Shift + F        | Buscar con el scrollback de la terminal
+
+
+* Layout
+
+Ctrl + Shift + O        | Dividir terminal horizontalmente
+------------------------------------------------------------------------------------------------- //
+Ctrl + Shift + E        | Dividir terminal verticalmente
+------------------------------------------------------------------------------------------------- //
+Ctrl + Shift + Up       | Mover borde principal Arriba
+------------------------------------------------------------------------------------------------- //
+Ctrl + Shift + Down     | Mover borde principal Abajo
+------------------------------------------------------------------------------------------------- //
+Ctrl + Shift + Right    | Mover borde principal a la Derecha
+------------------------------------------------------------------------------------------------- //
+Ctrl + Shift + Left     | Mover borde principal a la Izquierda
+------------------------------------------------------------------------------------------------- //
+Ctrl + Shift + S        | Mostrar/Ocultar barra Scroll
+------------------------------------------------------------------------------------------------- //
+Ctrl + Plus (+)         | Aumentar tamaño de la fuente
+------------------------------------------------------------------------------------------------- //
+Ctrl + Minus (-)        | Disminuir tamaño de la fuente
+------------------------------------------------------------------------------------------------- //
+Ctrl + Zero (0)         | Restaurar tamaño original de la fuente
+------------------------------------------------------------------------------------------------- //
+Ctrl + Shift + Z        | Ampliar la terminal actual
+------------------------------------------------------------------------------------------------- //
+F11                     | Pantalla completa
+------------------------------------------------------------------------------------------------- //
+Ctrl + Shift + W        | Cerrar la terminal actual
+------------------------------------------------------------------------------------------------- //
+Ctrl + Shift + X        | Mostrar sólo la terminal actual
+------------------------------------------------------------------------------------------------- //
+Ctrl + Shift + Q        | Cerrar Terminator
+
+
+* Pestañas
+
+Ctrl + Shift + T        | Abrir nueva tab.
+------------------------------------------------------------------------------------------------- //
+Ctrl + PageDown         | Mover a la siguiente pestaña
+------------------------------------------------------------------------------------------------- //
+Ctrl + PageUp           | Mover a la anterior pestaña
+------------------------------------------------------------------------------------------------- //
+Ctrl + Shift + N        | Mover a la siguiente terminal dentro de la misma pestaña
+------------------------------------------------------------------------------------------------- //
+Ctrl + Shift + P        | Mover a la anterior terminal dentro de la misma pestaña
+------------------------------------------------------------------------------------------------- //
+Ctrl + Shift + PageDown | Intercambiar posición con la siguiente pestaña
+------------------------------------------------------------------------------------------------- //
+Ctrl + Shift + PageUp   | Intercambiar posición con la anterior pestaña
+
+
+
+// ------------------------------- Comandos de Terminator [ENDED] ------------------------------- //
