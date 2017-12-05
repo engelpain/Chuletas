@@ -1,0 +1,60 @@
+* Centro Nacional de Desarrollo e Investigación de Tecnologías Libres (CENDITEL)
+* CENDITEL, Mérida - Venezuela
+* Dirección de Desarrollo
+* @author Ing. Angelo Osorio
+* @date 05-12-2017 // (dd,mm,yyyy)
+* Guía para aprender a cambiar los puertos de programas
+
+
+
+// ----------------------------------- Nota del autor [BEGIN] ----------------------------------- //
+
+El símbolo al principio de una línea de comandos indica:
+  $ = hacer la sentencia como usuario
+  # = hacer la sentencia como administrador
+
+Nano es el editor de texto de consolas que instalar Debian por defecto, por ello se utiliza nano,
+sin embargo, se puede usar cualquier otro editor.
+
+// ----------------------------------- Nota del autor [ENDED] ----------------------------------- //
+
+
+
+// --------------------------------------- Apache [BEGIN] --------------------------------------- //
+
+1. Abrir el archivo de los puertos de apache
+  # nano /etc/apache2/ports.conf 
+
+2. Cambiar el puerto (Por defecto es el 80)
+
+Listen 80 <--- Número de puerto
+
+// --------------------------------------- Apache [ENDED] --------------------------------------- //
+
+
+
+// ------------------------------------- PostgreSQL [BEGIN] ------------------------------------- //
+
+1. Abrir el archivo de configuración de PostgreSQL
+  $ nano /etc/postgresql/version/main/postgresql.conf
+Nota: en versión hay que reemplazarlo por la versión de PostgreSQL que posea, por ejemplo:
+  $ nano /etc/postgresql/9.4/main/postgresql.conf
+
+2. En el apartado CONNECTIONS AND AUTHENTICATION Cambiar el puerto (Por defecto es el 5432):
+port = 5432 <--- Número de puerto
+
+// ------------------------------------- PostgreSQL [ENDED] ------------------------------------- //
+
+
+
+// ------------------------------------- Phppgadmin [ENDED] ------------------------------------- //
+
+1. Abrir el archivo de configuración de Phppgadmin
+  # nano /etc/phppgadmin/config.inc.php
+
+2. Bajo el comentario "Database port on server (5432 is the PostgreSQL default)" está el puerto:
+
+$conf['servers'][0]['port'] = 5432;
+
+
+// ------------------------------------- Phppgadmin [ENDED] ------------------------------------- //
