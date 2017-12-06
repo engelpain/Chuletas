@@ -25,9 +25,11 @@ sin embargo, se puede usar cualquier otro editor.
 1. Abrir el archivo de los puertos de apache
   # nano /etc/apache2/ports.conf 
 
-2. Cambiar el puerto (Por defecto es el 80)
+2. Entre las primeras líneas se encuentra una sentencia que dice
 
-Listen 80 <--- Número de puerto
+Listen 80
+
+Ese es el puerto (Por defecto es el 80)
 
 // --------------------------------------- Apache [ENDED] --------------------------------------- //
 
@@ -40,7 +42,7 @@ Listen 80 <--- Número de puerto
 Nota: en versión hay que reemplazarlo por la versión de PostgreSQL que posea, por ejemplo:
   $ nano /etc/postgresql/9.4/main/postgresql.conf
 
-2. En el apartado CONNECTIONS AND AUTHENTICATION Cambiar el puerto (Por defecto es el 5432):
+2. En el apartado CONNECTIONS AND AUTHENTICATION se encuentra el puerto (Por defecto es el 5432):
 port = 5432 <--- Número de puerto
 
 // ------------------------------------- PostgreSQL [ENDED] ------------------------------------- //
