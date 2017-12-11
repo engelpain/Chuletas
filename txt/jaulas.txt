@@ -31,27 +31,27 @@ que toda operación dentro de la jaula se realizará bajo permiso root exclusiva
 
 2. Crear un directorio para el sistema enjaulado
   # mkdir -p /jaulas/jessie
+
 Nota: En este caso se creó un directorio que se llama "jaulas" antes de crear el directorio "jessie"
 que será el que alojará la jaula, dado que es más práctico tener todas las jaulas en el mismo sitio.
-Nota 2: Es indiferente dónde se cree el directorio. En este ejemplo, el directorio está directamente
-en la raíz.
+Nota 2: Es indiferente dónde se cree el directorio, siempre y cuando se tenga en cuenta que la ruta
+cambiará dependiendo de donde se guarde. En este ejemplo, el directorio está directamente en la raíz
+entonces, el prefijo de la dirección siempre será "/".
 Nota 3: Se utiliza el argumento -p para que no arroje un error si el directorio padre ya existe y
 crea el directorio padre si es necesario.
 
 3. Descargar el sistema desde los repositorios Debian
   # debootstrap jessie /jaulas/jessie ​http://ftp.us.debian.org/debian/
 
-4. Una vez descargado se debe importar el proc de la máquina anfitrión a la jaula usando el comando:
-  # mount /proc /jaulas/jessie/proc/
-Nota: Cada vez que se reinicia el equipo hay que realizar el paso anterior, por lo tanto, para
-automatizar esa directiva se puede modificar el fichero /etc/fstab con la siguiente instrucción:
-  # echo "/proc /home/engelpain/jaulas/jessie/proc/ auto bind 0 0 " >> /etc/fstab
-Y al momento de iniciar la máquina sólo utilizamos el comando:
-  # mount -a
-Nota 2: En caso de que el primer comando de este paso arroje un error, ejecutar los comandos de la
-nota 1.
+4. Una vez descargado se debe importar el proc de la máquina anfitrión a la jaula.
+Cada vez que se reinicia el equipo hay que montar el proc, entonces, para automatizar esa directiva
+se modifica el fichero /etc/fstab con la siguiente instrucción:
+  # echo "/proc /jaulas/jessie/proc/ auto bind 0 0 " >> /etc/fstab
 
 5. Iniciar el sistema enjaulado:
+Montar el proc:
+  # mount -a
+Entrar en la jaula:
   # chroot /jaulas/jessie
 
 // ----------------------- Crear una Jaula de Debian 8 en Debian 9 [ENDED] ---------------------- //
@@ -60,20 +60,47 @@ nota 1.
 
 // ---------------------- Crear una Jaula de Arch Linux en Debian 9 [BEGIN] --------------------- //
 
+Nota: Arch Linux está disponible sólo para 64 Bits.
+
 1. Crear un directorio para el sistema enjaulado
   # mkdir -p /jaulas/arch
 Nota 1: En este caso se creó un directorio que se llama "jaulas" antes de crear el directorio "arch"
 que será el que alojará la jaula, dado que es más práctico tener todas las jaulas en el mismo sitio.
-Nota 2: Es indiferente dónde se cree el directorio.
+Nota 2: Es indiferente dónde se cree el directorio, siempre y cuando se tenga en cuenta que la
+ruta cambiará dependiendo de donde se guarde. En este ejemplo, el directorio está directamente en
+la raíz, entonces, el prefijo de la dirección siempre será "/".
 Nota 3: Se utiliza el argumento -p para que no arroje un error si el directorio padre ya existe, y
 crea el directorio padre si es necesario.
 
-2. Descargar la imagen Bootstrap desde un servidor de réplica:
-  2.1. Entrar en: https://www.archlinux.org/download/
-  2.2. Elegir el repositorio, en este caso: http://mirrors.evowise.com/archlinux/iso/
-  2.2. Buscar la imagen más reciente: http://mirrors.evowise.com/archlinux/iso/2017.12.01/
-  2.3. Descargar la imagen bootstrap:
-  http://mirrors.evowise.com/archlinux/iso/2017.12.01/archlinux-bootstrap-2017.12.01-x86_64.tar.gz
+2. Descargar la imagen Bootstrap desde un servidor de réplica con el navegador:
+  2.1. Entrar en la página oficial de descargas de Arch Linux:
+  https://www.archlinux.org/download/
+  
+  2.2. Elegir un repositorio del apartado "HTTP Direct Downloads":
+  Nota: Elegir el repositorio de su preferencia. En este caso se eligió:
+  http://mirrors.evowise.com/archlinux/iso/
+  
+  2.2. Buscar la imagen más reciente en el repositorio:
+  http://mirrors.evowise.com/archlinux/iso/2017.12.01/
+  
+  2.3. Descargar la imagen bootstrap desde la consola:
+  # cd /jaulas/arch
+  # wget http://mirrors.evowise.com/archlinux/iso/2017.12.01/archlinux-bootstrap-2017.12.01-x86_64.tar.gz
+
+3. Descomprimir lo descargado
+  # tar xzf archlinux-bootstrap-2017.12.01-x86_64.tar.gz
+
+4. Modificar el archivo de repositorios de la jaula
+  # nano root.x86_64/etc/pacman.d/mirrorlist
+  Se mostrará una lista de repositorios, se debe eliminar el signo numeral (#) al principio de la línea
+  del o los repositorio de su preferencia. En este caso se desmarcaron los tres de la Worldwide.
+
+5. Entrar en la jaula
+  # /tmp/root.x86_64/bin/arch-chroot /tmp/root.x86_64/
+
+6. Iniciar las llaves de Pacman
+  # pacman-key --init
+  # pacman-key --populate archlinux
 
 // ---------------------- Crear una Jaula de Arch Linux en Debian 9 [ENDED] --------------------- //
 
