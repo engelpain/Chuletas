@@ -1,0 +1,84 @@
+* Centro Nacional de Desarrollo e Investigación de Tecnologías Libres (CENDITEL)
+* CENDITEL, Mérida - Venezuela
+* Dirección de Desarrollo
+* @author Ing. Angelo Osorio
+* @date 14-11-2017 // (dd,mm,yyyy)
+* Guía para crear un sistema enjaulado
+
+
+
+// ----------------------------------- Nota del autor [BEGIN] ----------------------------------- //
+
+Al principio de una línea de comandos:
+  $ = hacer la sentencia como usuario
+  # = hacer la sentencia como administrador
+
+Sistema Enjaulado, también denominado Bootstraping:
+Consiste en correr un sistema operativo invitado dentro de un anfitrión, a través de la consola.
+Sirven para hacer pruebas en distintas distribuciones sin la necesidad de utilizar una máquina
+virtual, ni interfaz gráfica, además que utiliza los requerimientos de la máquina anfitriona, en
+lugar de seccionar éstos como pasa al momento de instalar una máquina virtual. La única desventaja
+que toda operación dentro de la jaula se realizará bajo permiso root exclusivamente.
+
+// ----------------------------------- Nota del autor [ENDED] ----------------------------------- //
+
+
+
+// ----------------------- Crear una Jaula de Debian 8 en Debian 9 [BEGIN] ---------------------- //
+
+1. Instalar debootstrap:
+  # apt install debootstrap
+
+2. Crear un directorio para el sistema enjaulado
+  # mkdir -p /jaulas/jessie
+Nota: En este caso se creó un directorio que se llama "jaulas" antes de crear el directorio "jessie"
+que será el que alojará la jaula, dado que es más práctico tener todas las jaulas en el mismo sitio.
+Nota 2: Es indiferente dónde se cree el directorio. En este ejemplo, el directorio está directamente
+en la raíz.
+Nota 3: Se utiliza el argumento -p para que no arroje un error si el directorio padre ya existe y
+crea el directorio padre si es necesario.
+
+3. Descargar el sistema desde los repositorios Debian
+  # debootstrap jessie /jaulas/jessie ​http://ftp.us.debian.org/debian/
+
+4. Una vez descargado se debe importar el proc de la máquina anfitrión a la jaula usando el comando:
+  # mount /proc /jaulas/jessie/proc/
+Nota: Cada vez que se reinicia el equipo hay que realizar el paso anterior, por lo tanto, para
+automatizar esa directiva se puede modificar el fichero /etc/fstab con la siguiente instrucción:
+  # echo "/proc /home/engelpain/jaulas/jessie/proc/ auto bind 0 0 " >> /etc/fstab
+Y al momento de iniciar la máquina sólo utilizamos el comando:
+  # mount -a
+Nota 2: En caso de que el primer comando de este paso arroje un error, ejecutar los comandos de la
+nota 1.
+
+5. Iniciar el sistema enjaulado:
+  # chroot /jaulas/jessie
+
+// ----------------------- Crear una Jaula de Debian 8 en Debian 9 [ENDED] ---------------------- //
+
+
+
+// ---------------------- Crear una Jaula de Arch Linux en Debian 9 [BEGIN] --------------------- //
+
+1. Crear un directorio para el sistema enjaulado
+  # mkdir -p /jaulas/arch
+Nota 1: En este caso se creó un directorio que se llama "jaulas" antes de crear el directorio "arch"
+que será el que alojará la jaula, dado que es más práctico tener todas las jaulas en el mismo sitio.
+Nota 2: Es indiferente dónde se cree el directorio.
+Nota 3: Se utiliza el argumento -p para que no arroje un error si el directorio padre ya existe, y
+crea el directorio padre si es necesario.
+
+2. Descargar la imagen Bootstrap desde un servidor de réplica:
+  2.1. Entrar en: https://www.archlinux.org/download/
+  2.2. Elegir el repositorio, en este caso: http://mirrors.evowise.com/archlinux/iso/
+  2.2. Buscar la imagen más reciente: http://mirrors.evowise.com/archlinux/iso/2017.12.01/
+  2.3. Descargar la imagen bootstrap:
+  http://mirrors.evowise.com/archlinux/iso/2017.12.01/archlinux-bootstrap-2017.12.01-x86_64.tar.gz
+
+// ---------------------- Crear una Jaula de Arch Linux en Debian 9 [ENDED] --------------------- //
+
+Guía de referencia para Jaula de Debian
+https://cumaco.cenditel.gob.ve/desarrollo/wiki/openwrt
+
+Guía de referencia para Jaula de Arch
+https://wiki.archlinux.org/index.php/Install_from_existing_Linux_(Espa%C3%B1ol)
