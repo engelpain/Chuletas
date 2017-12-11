@@ -99,7 +99,7 @@ automatizar esa directiva se puede modificar el fichero <code>/etc/fstab</code> 
         <p> <code> # wget http://mirrors.evowise.com/archlinux/iso/2017.12.01/archlinux-bootstrap-2017.12.01-x86_64.tar.gz </code>
         </p>
       </li>
-    <!-- </ol> -->
+    </ol>
   </li>
   <li>
     <p> Descomprimir lo descargado </p>
