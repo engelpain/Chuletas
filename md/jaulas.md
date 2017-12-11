@@ -126,10 +126,6 @@ automatizar esa directiva se puede modificar el fichero <code>/etc/fstab</code> 
 <p> Ahora la jaula está lista para utilizar </p>
 <p><img src="../img/jaulas6.png" alt="Jaula Arch"></p><br><br>
 
-
-
-
-
 <h3>Enlaces de referencia:</h3>
 <ul>
   <li> <a href="https://cumaco.cenditel.gob.ve/desarrollo/wiki/openwrt">Guía de referencia para Jaula de Debian</a></li>
