@@ -7,11 +7,7 @@ Fecha de Elaboración: 05-09-2017 (dd,mm,aaaa)
 
 ## Operaciones con Archivos comprimidos
 
-**Formato** |          **Comprimir**         |   **Descomprimir**  | **Ver contenido sin descomprimir**
------------ | ------------------------------ | ------------------- | ----------------------------------
-   TAR      | $ tar cvf archivo.tar archivo/ | tar xvf archivo.tar | $ tar tvf archivo.tar
-
-## Formato TAR:
+### Formato TAR:
 * Comprimir un directorio o archivo: `$ tar cvf archivo.tar archivo/`
 * Descomprimir: `$ tar xvf archivo.tar`
 * Ver contenido, sin descomprimir: `$ tar tvf archivo.tar`
@@ -40,31 +36,20 @@ Fecha de Elaboración: 05-09-2017 (dd,mm,aaaa)
 
 
 ## Formato TAR.BZ2:
-Comprimir un directorio o archivo:
-  $ tar -c archivos | bzip2 > archivo.tar.bz2
-Descomprimir:
-  $ bzip2 -dc archivo.tar.bz2 | tar -xv
-- Versiones recientes de tar
-  $ tar jvxf archivo.tar.bz2
-
-Ver contenido, sin descomprimir:
-  $ bzip2 -dc archivo.tar.bz2 | tar -tv
-
+* Comprimir un directorio o archivo: `$ tar -c archivos | bzip2 > archivo.tar.bz2`
+* Descomprimir: `$ bzip2 -dc archivo.tar.bz2 | tar -xv`
+   * Versiones recientes de tar: `$ tar jvxf archivo.tar.bz2`
+* Ver contenido, sin descomprimir: `$ bzip2 -dc archivo.tar.bz2 | tar -tv`
 
 ## Formato ZIP:
-Comprimir un directorio o archivo
-  $ zip archivo.zip archivo/*
-Descomprimir
-  $ unzip archivo.zip
-Ver contenido, sin descomprimir
-  $ unzip -v archivo.zip
+* Comprimir un directorio o archivo: `$ zip archivo.zip archivo/*`
+* Descomprimir: `$ unzip archivo.zip`
+* Ver contenido, sin descomprimir: `$ unzip -v archivo.zip`
 
 
 ## Formato RAR:
-Comprimir un directorio o archivo
-  $ rar a archivo.rar /mayo/archivos
-Descomprimir
-  $ rar x archivo.rar
-Ver contenido, sin descomprimir
-Forma 1: $ rar v archivo.rar
-Forma 2: $ rar l archivo.rar
+* Comprimir un directorio o archivo: `$ rar a archivo.rar /mayo/archivos`
+* Descomprimir: `$ rar x archivo.rar`
+* Ver contenido, sin descomprimir: 
+   * Forma 1: `$ rar v archivo.rar`
+   * Forma 2: `$ rar l archivo.rar`
