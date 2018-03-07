@@ -7,8 +7,9 @@ Fecha de Elaboración: 05-09-2017 (dd,mm,aaaa)
 
 ## Operaciones con Archivos comprimidos
 
-**Formato** ||          **Comprimir**         ||   **Descomprimir**  || **Ver contenido sin descomprimir**
-     TAR    || $ tar cvf archivo.tar archivo/ || tar xvf archivo.tar || $ tar tvf archivo.tar
+**Formato** |          **Comprimir**         |   **Descomprimir**  | **Ver contenido sin descomprimir**
+----------- | ------------------------------ | ------------------- | ----------------------------------
+   TAR      | $ tar cvf archivo.tar archivo/ | tar xvf archivo.tar | $ tar tvf archivo.tar
 
 ## Formato TAR:
 * Comprimir un directorio o archivo: `$ tar cvf archivo.tar archivo/`
