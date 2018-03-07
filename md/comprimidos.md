@@ -12,42 +12,42 @@ Fecha de Elaboración: 05-09-2017 (dd,mm,aaaa)
 * Descomprimir: `$ tar xvf archivo.tar`
 * Ver contenido, sin descomprimir: `$ tar tvf archivo.tar`
 
-## Formato TAR.GZ:
+### Formato TAR.GZ:
 * Comprimir un directorio o archivo: `$ tar czvf archivo.tar.gz archivo/`
 * Descomprimir: `$ tar xzvf archivo.tar.gz`
 * Ver contenido, sin descomprimir: `$ tar tzvf archivo.tar.gz`
 
-## Formato TAR.Z:
+### Formato TAR.Z:
 * Comprimir un directorio o archivo: `$ tar czvf archivo.tar.z archivo/`
 * Descomprimir: `$ tar xzvf archivo.tar.z`
 * Ver contenido, sin descomprimir: `$ tar tzvf archivo.tar.z`
 
 
-## Formato TGZ:
+### Formato TGZ:
 * Comprimir un directorio o archivo: `$ tar czvf archivo.tgz archivo/`
 * Descomprimir: `$ tar xzvf archivo.tgz`
 * Ver contenido, sin descomprimir: `$ tar tzvf archivo.tgz`
 
 
-## Formato TGZ:
+### Formato TGZ:
 * Comprimir un directorio o archivo: `$ tar czvf archivo.tgz archivo/`
 * Descomprimir: `$ tar xzvf archivo.tgz`
 * Ver contenido, sin descomprimir: `$ tar tzvf archivo.tgz`
 
 
-## Formato TAR.BZ2:
+### Formato TAR.BZ2:
 * Comprimir un directorio o archivo: `$ tar -c archivos | bzip2 > archivo.tar.bz2`
 * Descomprimir: `$ bzip2 -dc archivo.tar.bz2 | tar -xv`
    * Versiones recientes de tar: `$ tar jvxf archivo.tar.bz2`
 * Ver contenido, sin descomprimir: `$ bzip2 -dc archivo.tar.bz2 | tar -tv`
 
-## Formato ZIP:
+### Formato ZIP:
 * Comprimir un directorio o archivo: `$ zip archivo.zip archivo/*`
 * Descomprimir: `$ unzip archivo.zip`
 * Ver contenido, sin descomprimir: `$ unzip -v archivo.zip`
 
 
-## Formato RAR:
+### Formato RAR:
 * Comprimir un directorio o archivo: `$ rar a archivo.rar /mayo/archivos`
 * Descomprimir: `$ rar x archivo.rar`
 * Ver contenido, sin descomprimir: 
