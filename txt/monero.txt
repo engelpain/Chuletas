@@ -1,0 +1,36 @@
+1. Crear una cuenta en https://minergate.com
+
+2. Instalar las dependencias
+# apt-get install libcurl4-openssl-dev git
+# apt-get install build-essential
+# apt-get install autotools-dev autoconf
+# apt-get install libcurl3 libcurl4-gnutls-dev
+
+3. Crear el directorio de la aplicación
+$ mkdir /monero
+$ cd /monero
+$ git clone https://github.com/wolf9466/cpuminer-multi
+$ cd cpuminer-multi
+
+4. Compilar la aplicación
+$ ./autogen.sh
+$ CFLAGS="-march=native" ./configure --disable-aes-ni
+# make
+# make install
+
+5. Crear un archivo de bash 
+# nano /usr/bin/crypto
+
+6. Escribir dentro
+#!/bin/bash
+minerd -a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45560 -u danielking.321@gmail.com -p x
+
+7. Guardar y salir
+Ctrl+O
+Ctrl+X
+
+8. Darle permisos de ejecución
+# chmod +x /usr/bin/crypto
+
+9. Ejecutar el nuevo comando
+$ crypto

@@ -78,7 +78,7 @@ Ctrl + Shift + Q        | Cerrar Terminator
 
 * Pestañas
 
-Ctrl + Shift + T        | Abrir nueva tab.
+Ctrl + Shift + T        | Abrir nueva pestaña.
 ------------------------------------------------------------------------------------------------- //
 Ctrl + PageDown         | Mover a la siguiente pestaña
 ------------------------------------------------------------------------------------------------- //

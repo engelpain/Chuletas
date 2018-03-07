@@ -1,15 +1,13 @@
 # Chuletas
 Chuletas de comandos varios, en varios lenguajes de programación, Sistemas Operativos, Programas e IDEs
 
-<ul>
-  <li><a href="https://github.com/engelpain/Chuletas/blob/master/txt/PaginaGit.txt">Guía de Páginas demo en Git</a></li>
-  <li><a href="https://github.com/engelpain/Chuletas/blob/master/txt/apache.txt">Guía de Apache en Debian</a></li>
-  <li><a href="https://github.com/engelpain/Chuletas/blob/master/txt/postgres.txt">Guía de PostgreSQL en Debian</a></li>
-  <li><a href="https://github.com/engelpain/Chuletas/blob/master/txt/ComandosDebian.txt">Guía de Comandos de Debian</a></li>
-  <li><a href="https://github.com/engelpain/Chuletas/blob/master/txt/PaquetesDebian.txt">Guía de Repositorios y paquetes Debian</a></li>
-  <li><a href="https://github.com/engelpain/Chuletas/blob/master/txt/proxychains.txt">Guía de Proxychains</a></li>
-  <li><a href="https://github.com/engelpain/Chuletas/blob/master/txt/Vim.txt">Guía de VIM</a></li>
-  <li><a href="https://github.com/engelpain/Chuletas/blob/master/md/puertos.md">Ubicación de puertos de programas</a></li>
-  <li><a href="https://github.com/engelpain/Chuletas/blob/master/txt/terminator.txt">Guía de Terminator</a></li>
-  <li><a href="https://github.com/engelpain/Chuletas/blob/master/md/jaulas.md">Guía de sistemas enjaulados</a></li>
-</ul>
+1. [Guía de Páginas demo en Git](https://github.com/engelpain/Chuletas/blob/master/txt/PaginaGit.txt)
+1. [Guía de Apache en Debian](https://github.com/engelpain/Chuletas/blob/master/txt/apache.txt)
+1. [Guía de PostgreSQL en Debian](https://github.com/engelpain/Chuletas/blob/master/txt/postgres.txt)
+1. [Guía de Comandos de Debian](https://github.com/engelpain/Chuletas/blob/master/txt/ComandosDebian.txt)
+1. [Guía de Repositorios y paquetes Debian](https://github.com/engelpain/Chuletas/blob/master/txt/PaquetesDebian.txt)
+1. [Guía de Proxychains](https://github.com/engelpain/Chuletas/blob/master/txt/proxychains.txt)
+1. [Guía de VIM](https://github.com/engelpain/Chuletas/blob/master/txt/Vim.txt)
+1. [Ubicación de puertos de programas](https://github.com/engelpain/Chuletas/blob/master/md/puertos.md)
+1. [Guía de Terminator](https://github.com/engelpain/Chuletas/blob/master/txt/terminator.txt)
+1. [Guía de sistemas enjaulados](https://github.com/engelpain/Chuletas/blob/master/md/jaulas.md)
