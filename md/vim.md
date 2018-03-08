@@ -20,7 +20,7 @@ El símbolo al principio de una línea de comandos indica:
 * Ejecutar vim: `$ vim`
 * Abrir un archivo con vim: `$ vim /ruta/archivo.extensión`
 
-## Comando VIM
+## Modos de operación de VIM
 VIM posee dos modos de operación, *modo comandos* y *modo de inseción de texto*, por defecto se entra en *modo de comandos*.
 
 ### Comandos en modo de inseción de texto:
@@ -39,10 +39,10 @@ VIM posee dos modos de operación, *modo comandos* y *modo de inseción de texto
    * Forma 2: **ZZ** <- (Shift + z) dos veces
 
 * Moverse por el documento:
-   * Mueve el cursor hacia arriba: **k** o **flecha arriba**
-   * Mueve el cursor hacia abajo: **j** o flecha abajo
-   * Mueve el cursor a la izquierda: **h** o flecha izquierda
-   * Mueve el cursor a la derecha: **l** o flecha a la derecha
+   * Mueve el cursor hacia arriba: **flecha arriba** o **k**
+   * Mueve el cursor hacia abajo: **flecha abajo** o **j**
+   * Mueve el cursor a la izquierda: **flecha izquierda** o **h**
+   * Mueve el cursor a la derecha: **flecha derecha** o **l** 
    * Lleva el cursor al final de la palabra actual: **e**
    * Al final de una palabra delimitada por espacios: **E** <- (Shift + e)
    * Al inicio de una palabra: **b**
