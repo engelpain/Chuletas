@@ -38,7 +38,10 @@ Para instalar apache se utiliza el comando:
 
 
 ## mod_rewrite en Apache
-1. Para activar el módulo Rewrite de apache se utiliza el siguiente comando: `# a2enmod rewrite`
+1. Para activar el módulo Rewrite de apache se utiliza el siguiente comando:
+```
+   # a2enmod rewrite
+```
 2. Modificar el archivo `apache2.conf`. Se puede modificar tanto desde la consola como desde un editor de texto, siempre y cuando se tenga permiso de superusuario, en este caso se usará nano, editor de texto desde la consola: `# nano /etc/apache2/apache2.conf`
 3. Ahora se debe buscar la línea dentro del archivo que dice *AllowOverride None*. En caso de encontrar más de una, buscar la que tiene el directorio donde se alojan los archivos del servidor local, *www* en mi caso:
 ```

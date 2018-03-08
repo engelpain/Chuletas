@@ -13,3 +13,4 @@ Chuletas de comandos varios, en varios lenguajes de programación, Sistemas Oper
 1. [Guía de Terminator](https://github.com/engelpain/Chuletas/blob/master/txt/terminator.txt)
 1. [Guía de sistemas enjaulados](./md/jaulas.md)
 1. [Rsync](./md/rsync.md)
+1. [Vim](./md/vim.md)

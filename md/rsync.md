@@ -8,8 +8,8 @@ Fecha de Elaboración: 05-09-2017 (dd,mm,aaaa)
 ## Notas del autor
 El símbolo al principio de una línea de comandos indica:
 ```
-    $ = hacer la sentencia como usuario
-    # = hacer la sentencia como administrador
+  $ = hacer la sentencia como usuario
+  # = hacer la sentencia como administrador
 ```
 
 Paquete utilizado para realizar copias de respaldo de archivos y/o carpetas a través de la consola mostrando en tiempo real el estado de la operación, el porcentaje de la carga y el archivo que está respaldando. También es utilizado simplemente para copiar carpetas.
