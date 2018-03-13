@@ -50,11 +50,9 @@ El símbolo al principio de una línea de comandos indica:
 
 
 ## Entrar en PostgreSQL por consola
->Nota: "user@user:~$" es referencial, para que se note el cambio de usuario, donde **user** es el nombre de usuario del equipo 
-
-1. Cambiar al usuario *postgres* usando el comando *su postgres* como superusuario:
+1. Cambiar al usuario *postgres* usando el comando `su postgres` como superusuario:
    * `# su postgres`
-2. Ingresar el comando *psql*:
+2. Ingresar el comando `psql`:
    * `postgres@user:/home/user$ psql`
 3. El prefijo del prompt cambiará a `postgres=#`, significando que se entró con éxito a PostgreSQL.
 
