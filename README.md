@@ -1,17 +1,24 @@
 # Chuletas
 Chuletas de comandos varios, en varios lenguajes de programación, Sistemas Operativos, Programas e IDEs
 
-1. [Apache](./md/apache.md)
-1. [Archivos Comprimidos](./md/comprimidos.md)
-1. [Convertir videos con ffmpeg](./md/ffmpeg.md)
-1. [Guía de Comandos de Debian](./md/ComandosDebian.md)
-1. [Cómo crear una página en GitHub](./md/paginaGit.md)
-1. [Guía de PostgreSQL en Debian](./md/postgres.md)
-1. [Guía de Repositorios y paquetes Debian](https://github.com/engelpain/Chuletas/blob/master/txt/PaquetesDebian.txt)
-1. [Guía de VIM](https://github.com/engelpain/Chuletas/blob/master/txt/Vim.txt)
-1. [Ubicación de puertos de programas](./md/puertos.md)
-1. [Guía de Terminator](https://github.com/engelpain/Chuletas/blob/master/txt/terminator.txt)
-1. [Guía de sistemas enjaulados](./md/jaulas.md)
-1. [Proxychains](./md/proxychains.md)
-1. [Rsync](./md/rsync.md)
-1. [Vim](./md/vim.md)
+* Programas
+   * [Apache](./md/apache.md)
+   * [Archivos Comprimidos](./md/comprimidos.md)
+   * [Convertir videos con ffmpeg](./md/ffmpeg.md)
+   * [MySQL](./md/mysql.md)
+   * [PostgreSQL](./md/postgres.md)
+   * [Proxychains](./md/proxychains.md)
+   * [Rsync](./md/rsync.md)
+   * [Sass](./md/sass.md)
+   * [Sublime Text 3](./md/sublime.md)
+   * [Terminator](./txt/terminator.txt)
+   * [Ubicación de puertos de programas](./md/puertos.md)
+   * [Vim](./md/vim.md)
+* Utilidades
+   * [Cómo crear una página en GitHub](./md/paginaGit.md)
+   * [Colores Material Design](./md/colores.md)
+* Sistemas
+   * [Agregar comandos nuevos a Windows](./md/ComandosNuevos.md)
+   * [Comandos de Debian](./md/ComandosDebian.md)
+   * [Repositorios y paquetes Debian](https://github.com/engelpain/Chuletas/blob/master/txt/PaquetesDebian.txt)
+   * [Sistemas enjaulados en Debian](./md/jaulas.md)
