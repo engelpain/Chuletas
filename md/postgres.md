@@ -115,7 +115,10 @@ El símbolo al principio de una línea de comandos indica:
    * Agregar una llave primaria:
       * `ALTER TABLE nombre_tabla ADD PRIMARY KEY (MyPrimaryKey);`
    * Eliminar una llave primaria:
-      * `ALTER TABLE nombre_tabla DROP CONSTRAINT MyPrimaryKey;`
+      * `ALTER TABLE nombre_tabla DROP CONSTRAINT MyPrimaryKey;`}
+* *Llaves foráneas*:
+   * Agregar una llave primaria:
+      * `ALTER TABLE nombre_tabla ADD CONSTRAINT FK_nombre_tabla_nombreforaneo FOREIGN KEY (nombreforaneo) REFERENCES nombre_tabla_enlazada(nombre_campo_referenciado);`
 
 ### Usuarios
 * Crear usuario:
@@ -154,7 +157,7 @@ Detalles de los argumentos del comando:
 * -W              Parámetro para solicitar el password del usuario antes especificado
 * -h 127.0.0.1    Indica la dirección IP del host a donde se conectará
 * basename        Nombre de la base de datos que se va a exportar
-* > basename.sql  Indica dónde se va a guardar el archivo exportado
+* basename.sql  Indica dónde se va a guardar el archivo exportado
 
 ### Ejemplo:
 * La base de datos que se quiere respaldar se llama *entidades*

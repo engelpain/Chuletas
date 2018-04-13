@@ -7,6 +7,8 @@ Fecha de Elaboración: 28-03-2018 (dd,mm,aaaa)
 
 * Crear una base de datos
    * `CREATE DATABASE nombreBasedeDatos;`
+* Cambiar a una base de datos
+   * `USE nombreBasedeDatos`
 * Crear una tabla
    * `CREATE TABLE nombreTabla(dato1 INT PRIMARY KEY AUTO_INCREMENT, dato2 VARCHAR(20), dato3 CHAR(1), dato4 DATE);`
 * Ver los campos de una tabla
