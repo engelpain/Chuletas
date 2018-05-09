@@ -8,8 +8,8 @@ Fecha de Elaboración: 05-09-2017 (dd,mm,aaaa)
 ## Notas del autor
 El símbolo al principio de una línea de comandos indica:
 ```
-    $ = hacer la sentencia como usuario
-    # = hacer la sentencia como administrador
+   $ = hacer la sentencia como usuario
+   # = hacer la sentencia como administrador
 ```
 
 ## Gestionar Servicios
@@ -40,13 +40,13 @@ El símbolo al principio de una línea de comandos indica:
 ### Gestionar unidades externas
 Para montar una unidad externa o directorio, por ejemplo un pendrive, se utiliza el comando:
 ```
-  $ mount /media/usuario/nombreunidad
+   $ mount /media/usuario/nombreunidad
 ```
 El comando *mount* también sirve para montar directorios dentro de sistemas enjaulados.
 
 Para expulsar una unidad externa, por ejemplo un pendrive, se utiliza el comando:
 ```
-  $ umount /media/usuario/nombreunidad
+   $ umount /media/usuario/nombreunidad
 ```
 De igual forma a *mount*, *umount* sirve para desmontar directorios de jaulas.
 
@@ -59,31 +59,43 @@ Se utiliza la expresión ~/ para referirse al bashrc del usuario activo, si est�
 
 Para personalizar un comando en Debian se debe modificar el archivo ~/.bashrc con un editor de texto, por ejemplo: nano, vi o vim, en este caso se usará nano:
 ```
-  $ nano ~/.bashrc
+   $ nano ~/.bashrc
 ```
 Dentro del archivo al final hay que agregar:
 ```
-  alias palabra_corta='comando palabras o ruta a ejecutar'
+   alias palabra_corta='comando palabras o ruta a ejecutar'
 ```
 
 ### Recursos del sistema
 Para mostrar los recursos que ese están utilizando en el sistema se utiliza el comando:
 ```
-  $ top
+   $ top
 ```
 
 **Top mejorado**
 ```
-  # aptitude install htop
-  $ htop
+   # aptitude install htop
+   $ htop
 ```
 
 **Liberar espacio en la memoria RAM**
 ```
-  # sysctl -w vm.drop_caches=3
+   # sysctl -w vm.drop_caches=3
 ```
 
 ## Listar usuarios y grupos
 
 * Listar usuarios del sistema: `$ cat /etc/passwd`
 * Listar grupos del sistema: `$ cat /etc/group`
+
+## Trucos en terminal
+Para repetir la última sentencia de un comando en específico utilizada anteriormente, basta con
+typear: Signo de exclamación + las primeras dos letras del comando.
+
+* Ejemplo 1: digamos que el último comando de un paquete como *python* fue:
+`$ python manage.py runserver 0.0.0.0:8080`.
+   - Si luego se paró el comando para realizar otros comandos que no tienen que ver con python, y se 
+   requiere reutilizar el comando de python, no hay que reescribirlo, bastará con: `$ !py`. La
+   consola automáticamente lo interpreterá como el último comando con los parámetros incluidos.
+* Ejemplo 2: Un comando de aptitude como: `$ aptitude search ~c` bastaría con `$ !ap`.
+* Ejemplo 3: Un comando de screenfetch como: `$ screenfetch -D 'Fedora'` bastaría con `$ !sc`.

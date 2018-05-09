@@ -20,5 +20,5 @@ Chuletas de comandos varios, en varios lenguajes de programación, Sistemas Oper
 * Sistemas
    * [Agregar comandos nuevos a Windows](./md/ComandosNuevos.md)
    * [Comandos de Debian](./md/ComandosDebian.md)
-   * [Repositorios y paquetes Debian](https://github.com/engelpain/Chuletas/blob/master/txt/PaquetesDebian.txt)
+   * [Paquetes útiles varios para Debian](./md/paquetes.md)
    * [Sistemas enjaulados en Debian](./md/jaulas.md)
