@@ -85,8 +85,8 @@ Ahora la jaula está lista para utilizar.
    * En este caso se desmarcaron los tres de la Worldwide:
       * ![repositorio](../img/jaulas5.png)
 5. Entrar en la jaula
-   * `# /jaulas/arch/root.x86_64/bin/arch-chroot /jaulas/arch/root.x86_64/` 
-6.Iniciar las llaves de Pacman
+   * `# /jaulas/arch/root.x86_64/bin/arch-chroot /jaulas/arch/root.x86_64/`
+6. Iniciar las llaves de Pacman
    * `# pacman-key --init`
    * `# pacman-key --populate archlinux`
 
