@@ -101,6 +101,8 @@ Crea una imagen en la consola con una descripción de los requerimientos del sis
    * `# aptitude install screenfetch`
 * Utilizar screenfetch
    * `$ screenfetch`
+* Mostrar el logo de screenfetch omitiendo errores
+   * `$ screenfetch -E`
 * Simular que se está utilizando una distro distinta:
    * `$ screenfetch -D 'Nombre Distro linux'`
    * Por ejemplo: `$ screenfetch -D 'fedora'` mostraría un gráfico de Fedora.

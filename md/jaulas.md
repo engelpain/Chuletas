@@ -95,5 +95,5 @@ Ahora la jaula está lista para utilizar <br>
 
 ### Enlaces de referencia:
 
-[Guía de referencia para Jaula de Debian](https://cumaco.cenditel.gob.ve/desarrollo/wiki/openwrt)<br>
-[Guía de referencia para Jaula de Arch](https://wiki.archlinux.org/index.php/Install_from_existing_Linux_(Espa%C3%B1ol))
+* [Guía de referencia para Jaula de Debian](https://cumaco.cenditel.gob.ve/desarrollo/wiki/openwrt)<br>
+* [Guía de referencia para Jaula de Arch](https://wiki.archlinux.org/index.php/Install_from_existing_Linux_(Espa%C3%B1ol))
