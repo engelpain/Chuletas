@@ -13,16 +13,16 @@ Fecha de Elaboración: 05-09-2017 (dd,mm,aaaa)
 * 201 - La petición ha sido completada y ha resultado en la creación de un nuevo recurso.
 * 204 - La petición se ha completado con éxito pero su respuesta no tiene ningún contenido.
 * 301 - Esta y todas las peticiones futuras deberían ser dirigidas a la URI dada.
-* 400 - (*Bad Request*) La solicitud contiene sintaxis errónea y no debería repetirse.
-* 401 - (*Unauthorized*). Fallo de autentificación.
-* 403 - (*Forbidden*) Autentificada pero el servidor rehúsa responderla dado que el cliente no tiene
+* 400 - (**Bad Request**) La solicitud contiene sintaxis errónea y no debería repetirse.
+* 401 - (**Unauthorized**). Fallo de autentificación.
+* 403 - (**Forbidden**) Autentificada pero el servidor rehúsa responderla dado que el cliente no tiene
 los privilegios para hacerla.
-* 404 - (*Not Found*) Recurso no encontrado.
-* 500 - (*Internal Server Error*) Error interno del servidor.
-* 502 - (*Bad Gateway*) El servidor está actuando de proxy o gateway y ha recibido una respuesta
+* 404 - (**Not Found**) Recurso no encontrado.
+* 500 - (**Internal Server Error**) Error interno del servidor.
+* 502 - (**Bad Gateway**) El servidor está actuando de proxy o gateway y ha recibido una respuesta
 inválida del otro servidor, por lo que no puede responder adecuadamente a la petición del navegador.
-* 503 - (*Service Unavailable*) El servidor no puede responder a la petición del navegador porque
+* 503 - (**Service Unavailable**) El servidor no puede responder a la petición del navegador porque
 está congestionado o está realizando tareas de mantenimiento.
-* 504 - (*Gateway Timeout*) El servidor está actuando de proxy o gateway y no ha recibido a tiempo
+* 504 - (**Gateway Timeout**) El servidor está actuando de proxy o gateway y no ha recibido a tiempo
 una respuesta del otro servidor, por lo que no puede responder adecuadamente a la petición del
 navegador.
