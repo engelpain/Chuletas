@@ -6,7 +6,8 @@ Autor: [Ing. Angelo Osorio](https://twitter.com/Engel_PAIN)<br>
 Fecha de Elaboración: 05-09-2017 (dd,mm,aaaa)
 
 ### Respuestas informativas
-* 100 - El navegador puede continuar realizando su petición (se utiliza para indicar que la primera parte de la petición del navegador se ha recibido correctamente.
+* 100 - El navegador puede continuar realizando su petición (se utiliza para indicar que la primera
+parte de la petición del navegador se ha recibido correctamente.
 
 ### Peticiones correctas
 * 200 - Respuesta estándar para peticiones correctas.
