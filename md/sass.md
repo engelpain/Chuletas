@@ -29,3 +29,11 @@ C:\Ruby\bin\setrbvars.bat
       * `sass --style expanded origen.scss:destino.css`
 * Compilación recomendada para archivos en producción:
    * `sass --watch origen.scss:destino.min.css --style compressed`
+
+### Cambiar el tono de un color
+
+```sass
+   $color: #3cb878
+   $light: lighten($color, 15%) // Aclarar color
+   $dark: darken($color, 15%)   // Oscurecer color
+```
