@@ -21,8 +21,10 @@ Fecha de Elaboración: 28-03-2018 (dd,mm,aaaa)
    * *Ctrl + T*: Intercambiar caracteres, el posterior al anterior.
    * *Ctrl + H*: Reemplazar.
    * *Ctrl + ç*: Comentar o descomentar una línea o un bloque seleccionado.
-   * *Ctrl + Shift + K*: Borrar la línea en la que esté el cursor.
    * *Ctrl + M*: Ir a la llave inicio/final, sólo si está en la opuesta.
+   * *Ctrl + Shift + K*: Borrar la línea en la que esté el cursor.
+   * *Ctrl + Shift + [*: Pliega el código que esté anidado la función o etiqueta donde esté situado el cursor.
+   * *Ctrl + Shift + ]*: Despliega el código que esté anidado la función o etiqueta donde esté situado el cursor.
 * Package Control
    * *Ctrl + Shift + P*: Abrir el package control.
    * Una vez abierto el Package Control:
