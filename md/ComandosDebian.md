@@ -12,6 +12,18 @@ El símbolo al principio de una línea de comandos indica:
    # = hacer la sentencia como administrador
 ```
 
+
+### Comandos básicos de consola
+* `$ pwd`: Muestra la ruta actual  
+* `$ ls`: Listar archivos
+* `$ ls -l`: Listar directorios y archivos detallado
+* `$ ls -a`: Listar directorios y archivos incluyendo ocultos
+* `$ ls -la`: Listar directorios y archivos detallado incluyendo ocultos
+* `$ cd nombredirectorio`: Cambiar al directorio "nombredirectorio"
+* `$ du -sh *`: Muestra el peso de los archivos del directorio
+
+
+
 ## Gestionar Servicios
 * Iniciar un servicio:
    * Forma 1: `# systemctl start servicio`
@@ -53,11 +65,9 @@ De igual forma a *mount*, *umount* sirve para desmontar directorios de jaulas.
 
 ### Crear comandos personalizados en Debian
 > Nota Importante:
-Debian posee dos archivos .bashrc
-Uno del usuario y otro de root, dependiendo del usuario con el que se quiera ejecutar ese alias se debe modificar el .bashrc como usuario o como root.
-Se utiliza la expresión ~/ para referirse al bashrc del usuario activo, si está activo el usuario root, se modificará el bashrc que se encuentra en /root, si en cambio es un usuario común, entonces se modificará el que se encuentra en /home/usuario
+Debian posee dos archivos .bashrc, uno del usuario y otro de root, dependiendo del usuario con el que se quiera ejecutar ese alias se debe modificar el .bashrc como usuario o como root. Se utiliza la expresión *~/* para referirse al bashrc del usuario activo, si está activo el usuario root, se modificará el bashrc que se encuentra en /root, si en cambio es un usuario común, entonces se modificará el que se encuentra en /home/usuario
 
-Para personalizar un comando en Debian se debe modificar el archivo ~/.bashrc con un editor de texto, por ejemplo: nano, vi o vim, en este caso se usará nano:
+Para personalizar un comando en Debian se debe modificar el archivo *~/.bashrc* con un editor de texto, por ejemplo: nano, vi o vim, en este caso se usará nano:
 ```
    $ nano ~/.bashrc
 ```
@@ -99,3 +109,4 @@ typear: Signo de exclamación + las primeras dos letras del comando.
    consola automáticamente lo interpreterá como el último comando con los parámetros incluidos.
 * Ejemplo 2: Un comando de aptitude como: `$ aptitude search ~c` bastaría con `$ !ap`.
 * Ejemplo 3: Un comando de screenfetch como: `$ screenfetch -D 'Fedora'` bastaría con `$ !sc`.
+* Ejemplo 4: Habiendo usado el comando para apagar el equipo: `# shutdown -h now` bastaría con `# !sh`.
