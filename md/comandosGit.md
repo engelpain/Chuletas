@@ -19,6 +19,8 @@ El símbolo al principio de una línea de comandos indica:
    * `$ git config --global user.name "username"`
 * Asignar el correo para cada commit:
    * `$ git config --global user.email sample@example.com`
+* Mostrar los datos de usuario que están configurados
+   * `$ git config -l`
 
 
 
