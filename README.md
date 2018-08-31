@@ -2,6 +2,7 @@
 Chuletas de comandos varios, en varios lenguajes de programación, Sistemas Operativos, Programas e IDEs
 
 * Programas
+   * [Angular 6](./md/angular.md)
    * [Apache](./md/apache.md)
    * [Archivos Comprimidos](./md/comprimidos.md)
    * [Convertir videos con ffmpeg](./md/ffmpeg.md)
