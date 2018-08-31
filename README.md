@@ -7,6 +7,7 @@ Chuletas de comandos varios, en varios lenguajes de programación, Sistemas Oper
    * [Convertir videos con ffmpeg](./md/ffmpeg.md)
    * [Git](./md/comandosGit.md)
    * [MySQL](./md/mysql.md)
+   * [NodeJS](./md/nodejs.md)
    * [PostgreSQL](./md/postgres.md)
    * [Proxychains](./md/proxychains.md)
    * [Rsync](./md/rsync.md)
