@@ -68,7 +68,16 @@ El símbolo al principio de una línea de comandos indica:
    * `$ git pull`
 * Revisar el estado de una rama:
    * `$ git status`
+* Revisar el estado de una rama (simplificado):
+   * `$ git status -s`
 
+### Descargar cambios con conflictos en la rama
+* Guardar los cambios que se tienen pendientes:
+   * `$ git stash`
+* Solicitar los cambios de la rama:
+   * `$ git pull`
+* Incorporar los cambios pendientes sobre los recién descargados:
+   * `$ git stash pop`
 
 
 ## Ramas
