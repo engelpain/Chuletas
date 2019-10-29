@@ -14,7 +14,7 @@ El símbolo al principio de una línea de comandos indica:
 
 
 ### Comandos básicos de consola
-* `$ pwd`: Muestra la ruta actual  
+* `$ pwd`: Muestra la ruta actual
 * `$ ls`: Listar archivos
 * `$ ls -l`: Listar directorios y archivos detallado
 * `$ ls -a`: Listar directorios y archivos incluyendo ocultos
@@ -104,9 +104,12 @@ typear: Signo de exclamación + las primeras dos letras del comando.
 
 * Ejemplo 1: digamos que el último comando de un paquete como *python* fue:
 `$ python manage.py runserver 0.0.0.0:8080`.
-   - Si luego se paró el comando para realizar otros comandos que no tienen que ver con python, y se 
+   - Si luego se paró el comando para realizar otros comandos que no tienen que ver con python, y se
    requiere reutilizar el comando de python, no hay que reescribirlo, bastará con: `$ !py`. La
    consola automáticamente lo interpreterá como el último comando con los parámetros incluidos.
 * Ejemplo 2: Un comando de aptitude como: `$ aptitude search ~c` bastaría con `$ !ap`.
 * Ejemplo 3: Un comando de screenfetch como: `$ screenfetch -D 'Fedora'` bastaría con `$ !sc`.
 * Ejemplo 4: Habiendo usado el comando para apagar el equipo: `# shutdown -h now` bastaría con `# !sh`.
+
+## Encontrar un archivo en un directorio específico
+* `$ find /home/username/ -name "*.err"`
