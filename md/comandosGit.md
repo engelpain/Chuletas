@@ -79,6 +79,12 @@ El símbolo al principio de una línea de comandos indica:
 * Incorporar los cambios pendientes sobre los recién descargados:
    * `$ git stash pop`
 
+### Desechar cambios
+* De un archivo:
+   * `$ git checkout -- <file>`
+* Todos los archivos:
+   * `git reset --hard`
+
 
 ## Ramas
 * Crear una rama:
