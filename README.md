@@ -13,6 +13,7 @@ Chuletas de comandos varios, en varios lenguajes de programación, Sistemas Oper
    * [Proxychains](./md/proxychains.md)
    * [Rsync](./md/rsync.md)
    * [Sass](./md/sass.md)
+   * [SSH](./md/ssh.md)
    * [SQLite3](./md/sqlite.md)
    * [Sublime Text 3](./md/sublime.md)
    * [Terminator](./txt/terminator.txt)
