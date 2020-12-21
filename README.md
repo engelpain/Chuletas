@@ -16,7 +16,7 @@ Chuletas de comandos varios, en varios lenguajes de programación, Sistemas Oper
    * [SSH](./md/ssh.md)
    * [SQLite3](./md/sqlite.md)
    * [Sublime Text 3](./md/sublime.md)
-   * [Terminator](./txt/terminator.txt)
+   * [Terminator](./md/terminator.md)
    * [Ubicación de puertos de programas](./md/puertos.md)
    * [Vim](./md/vim.md)
 * Utilidades
