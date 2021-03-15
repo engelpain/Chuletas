@@ -60,4 +60,5 @@ misma ventana.
 | Ctrl + Shift + P        | Mover a la anterior terminal dentro de la misma pestaña  |
 | Ctrl + Shift + PageDown | Intercambiar posición con la siguiente pestaña           |
 | Ctrl + Shift + PageUp   | Intercambiar posición con la anterior pestaña            |
+| Super + R               | Rotar terminales (Sentido a las agujas del reloj)        |
 | Shift + Super + R       | Rotar terminales (Inverso a las agujas del reloj)        |
