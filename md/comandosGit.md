@@ -15,14 +15,15 @@ Fecha de Elaboración: 05-09-2017 (dd,mm,aaaa)
 
 
 ## Índice
-1. [Guía rápida](#forma-corta-de-commitear-y-subir-cambios)
+1. [Guía rápida](#guía-rápida)
 1. [Gestión de Usuario](#gestión-de-usuario)
-1. [Crear un repositorio](#crear-un-repositorio)
+1. [Crear un repositorio local](#crear-un-repositorio-local)
 1. [Clonar un repositorio](#clonar-un-repositorio)
 1. [Sincronización](#sincronización)
 1. [Añadir cambios](#añadir-cambios)
 1. [Desechar cambios](#desechar-cambios)
 1. [Commit](#commit)
+1. [Logs](#logs)
 1. [Ramas](#ramas)
 1. [Repositorios remotos alternativos](#repositorios-remotos-alternativos)
 
@@ -98,10 +99,18 @@ Fecha de Elaboración: 05-09-2017 (dd,mm,aaaa)
 * Deshacer el último commit (pushed): `$ git reset --soft HEAD~1`
 
 
+## Logs
+* Normal: `$ git log`
+* Simplificado: `$ git log --oneline`
+* Detallado (nombres de los archivos modificados): `$ git log --name-only`
+* Detallado (nombres de los archivos y de cambios): `$ git log --stat`
+* Detallado (cambios en cada archivo): `$ git log -p`
+
+
 ## Ramas
 * Cambiar de rama: `$ git checkout rama`
 * Crear una rama: `$ git checkout -b nuevarama`
-* Cambiar de rama: `$ git checkout rama`
+* Ver ramas del repositorio: `$ git branch`
 * Volver a un commit anterior: `$ git checkout commit-id`
 
 
