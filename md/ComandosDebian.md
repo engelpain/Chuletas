@@ -82,11 +82,18 @@ Para mostrar los recursos que ese están utilizando en el sistema se utiliza el 
    $ top
 ```
 
-**Top mejorado**
+**Top pero en tiempo real**
 ```
    # aptitude install htop
    $ htop
 ```
+
+**Otra versión en tiempo real de top**
+```
+   # aptitude install gotop
+   $ gotop
+```
+
 
 **Liberar espacio en la memoria RAM**
 ```
@@ -97,6 +104,10 @@ Para mostrar los recursos que ese están utilizando en el sistema se utiliza el 
 
 * Listar usuarios del sistema: `$ cat /etc/passwd`
 * Listar grupos del sistema: `$ cat /etc/group`
+
+
+## Listar paquetes instalados
+   `grep " install " /var/log/dpkg.log`
 
 ## Trucos en terminal
 Para repetir la última sentencia de un comando en específico utilizada anteriormente, basta con
