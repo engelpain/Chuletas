@@ -124,3 +124,7 @@ typear: Signo de exclamación + las primeras dos letras del comando.
 
 ## Encontrar un archivo en un directorio específico
 * `$ find /home/username/ -name "*.err"`
+
+## Determinar la pantalla de login del entorno de escritorio
+* `# dpkg-reconfigure gdm` en caso que **gdm** sea su entorno predeterminado.
+* `# dpkg-reconfigure lightdm` en caso que **lightdm** sea su entorno predeterminado
