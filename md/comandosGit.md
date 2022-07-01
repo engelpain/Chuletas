@@ -35,21 +35,18 @@ Fecha de Elaboración: 05-09-2017 (dd,mm,aaaa)
 
 
 ## Gestión de Usuario
-* Configurar **username**:
-   * Global: `$ git config --global user.name "Angelo Osorio"`
-   * Solo en el repositorio: `$ git config user.name "Angelo Osorio"`
-* Configurar **correo**:
-   * Global: `$ git config --global user.email sample@example.com`
-   * Solo en el repositorio: `$ git config user.email sample@example.com`
-* Configurar **editos**:
-   * Global: `$ git config --global core.editor "nombreeditor"`
-   * Solo en el repositorio: `$ git config core.editor "nombreeditor"`
+* Configurar **Nombre del usuario**: `$ git config user.name "Angelo Osorio"`
+* Configurar **correo electrónico**: `$ git config user.email sample@example.com`
+* Configurar **editos**: `$ git config core.editor "nombreeditor"`
 * Almacenar sus credenciales de inicio de sesión en Git:
    * Modo **caché** (almacena las credenciales por 15 minutos):
-      * `$ git config --global credential.helper cache`
+      * `$ git config credential.helper cache`
    * Modo **store** (almacena las credenciales en un archivo, sin límite de tiempo):
-      * `$ git config --global credential.helper store --file ~/.mis-credenciales`
+      * `$ git config credential.helper store --file ~/.mis-credenciales`
+   * Modo **store** (almacena las credenciales en el gestor interno del sistema operativo, sin límite de tiempo):
+      * `$ git config credential.helper store
 * Mostrar configuración actual: `$ git config -l`
+> Nota: para que los cambios surjan efecto global se debe usar el _flag_ **--global**).
 
 
 ## Crear un repositorio local
@@ -63,6 +60,8 @@ Fecha de Elaboración: 05-09-2017 (dd,mm,aaaa)
 * Clonar un repositorio: `$ git clone git://sub.dominio.com/repo.git`
 * Clonar solo una rama específica del repositorio: `$ git clone -b mybranch git://sub.dominio.com/repo.git`
 * Clonar un repositorio en un directorio: `$ git clone git://sub.dominio.com/repo.git nombredeldirectorio`
+* Clonar un repositorio con x cantidad de commits tras el último: `$ git clone --depth=50 git://sub.dominio.com/repo.git`
+> En este ejemplo el repositorio será clonado con los últimos 50 commits.
 
 
 ## Sincronización
