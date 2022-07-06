@@ -121,6 +121,9 @@ typear: Signo de exclamación + las primeras dos letras del comando.
 * Ejemplo 2: Un comando de aptitude como: `$ aptitude search ~c` bastaría con `$ !ap`.
 * Ejemplo 3: Un comando de screenfetch como: `$ screenfetch -D 'Fedora'` bastaría con `$ !sc`.
 * Ejemplo 4: Habiendo usado el comando para apagar el equipo: `# shutdown -h now` bastaría con `# !sh`.
+> Nota: No es necesario que sean solamente dos letras, se puede escribir el nombre completo en caso que
+> se hayan usado comandos que comiencen con las mismas letras, un ejemplo sería *aptitude* y *apt-get*.
+* Para repetir el último comando que se ha usado en la terminar basta con usar `!!`.
 
 ## Encontrar un archivo en un directorio específico
 * `$ find /home/username/ -name "*.err"`
