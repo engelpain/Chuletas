@@ -131,3 +131,8 @@ typear: Signo de exclamación + las primeras dos letras del comando.
 ## Determinar la pantalla de login del entorno de escritorio
 * `# dpkg-reconfigure gdm` en caso que **gdm** sea su entorno predeterminado.
 * `# dpkg-reconfigure lightdm` en caso que **lightdm** sea su entorno predeterminado
+
+## Administrar una red
+* Apagar una conexión: `# ip link set nombredelared down`.
+* Encender una conexión: `# ip link set nombredelared up`.
+> Normalmente las redes de tipo cableadas usan un nombre parecido a **eth0**, y las redes inalámbricas uno similar a **wlan0**, donde 0 significa que es la primera.
