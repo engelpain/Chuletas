@@ -29,9 +29,10 @@ Fecha de Elaboración: 05-09-2017 (dd,mm,aaaa)
 
 
 ## Guía rápida
-1. Añadir cambios: `$ git add .` (En referencia al directorio actual)
-2. Nota descriptiva de los cambios realizados: `$ git commit -m "Descripción del commit"`
-3. Subir los archivos al repositorio: `$ git push`
+1. Siempre hacer pull antes de subir cualquier cambio (nadie quiere borrar el trabajo de otros): `$ git pull"`
+2. Añadir cambios: `$ git add .` (En referencia al directorio actual)
+3. Nota descriptiva de los cambios realizados: `$ git commit -m "Descripción del commit"`
+4. Subir los archivos al repositorio: `$ git push`
 
 
 ## Gestión de Usuario
@@ -85,6 +86,10 @@ Fecha de Elaboración: 05-09-2017 (dd,mm,aaaa)
 * Añadir todos los archivos que comiencen con 'fil': `$ git add fil*`
 
 
+## Ver cambios
+* 
+
+
 ## Desechar cambios
 * De un archivo: `$ git checkout -- <file>`
 * Todos los archivos: `$ git reset --hard`
@@ -104,6 +109,7 @@ Fecha de Elaboración: 05-09-2017 (dd,mm,aaaa)
 * Detallado (nombres de los archivos modificados): `$ git log --name-only`
 * Detallado (nombres de los archivos y de cambios): `$ git log --stat`
 * Detallado (cambios en cada archivo): `$ git log -p`
+* Detallado por commit específico (cambios en cada archivo): `$ git log -p hashdelcommit`
 
 
 ## Ramas
