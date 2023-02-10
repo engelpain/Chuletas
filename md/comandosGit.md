@@ -21,6 +21,7 @@ Fecha de Elaboración: 05-09-2017 (dd,mm,aaaa)
 1. [Clonar un repositorio](#clonar-un-repositorio)
 1. [Sincronización](#sincronización)
 1. [Añadir cambios](#añadir-cambios)
+1. [Ver cambios](#ver-cambios)
 1. [Desechar cambios](#desechar-cambios)
 1. [Commit](#commit)
 1. [Logs](#logs)
@@ -81,13 +82,14 @@ Fecha de Elaboración: 05-09-2017 (dd,mm,aaaa)
    * Forma 1: `$ git add --all`
    * Forma 2: `$ git add *`
    * Forma 3: `$ git add .` (En referencia al directorio actual)
-* Añadir archivos específicos:  `$ git add rutarelativa/archivo.extension`
+* Añadir archivos específicos:  `$ git add ruta-relativa/archivo.extension`
 * Añadir todos los archivos con una extensión específica: `$ git add *.extensión`
 * Añadir todos los archivos que comiencen con 'fil': `$ git add fil*`
 
 
 ## Ver cambios
-* 
+* Cambios hechos en archivos existentes: `$ git diff`
+* Comparar commits: `$ git diff commit-id-1 commit-id-2`
 
 
 ## Desechar cambios
@@ -109,14 +111,19 @@ Fecha de Elaboración: 05-09-2017 (dd,mm,aaaa)
 * Detallado (nombres de los archivos modificados): `$ git log --name-only`
 * Detallado (nombres de los archivos y de cambios): `$ git log --stat`
 * Detallado (cambios en cada archivo): `$ git log -p`
-* Detallado por commit específico (cambios en cada archivo): `$ git log -p hashdelcommit`
+* Detallado por commit específico (cambios en cada archivo): `$ git log -p hash-del-commit`
 
 
 ## Ramas
+* Listar las ramas del repositorio: `$ git branch`
+* Crear una rama: `$ git checkout -b nueva-rama`
 * Cambiar de rama: `$ git checkout rama`
-* Crear una rama: `$ git checkout -b nuevarama`
-* Ver ramas del repositorio: `$ git branch`
-* Volver a un commit anterior: `$ git checkout commit-id`
+* Cambiar nombre a una rama: `$ git branch -m nombre-rama nuevo-nombre`
+* Eliminar una rama: `$ git branch -d nombre-rama`
+
+## Otras configuraciones con git-branch y git-checkout
+* Cambiar a un commit anterior: `$ git checkout commit-id`
+* Configurar un repositorio remoto y rama predeterminado para su local actual: `$ git branch --set-upstream-to=origin/master master`
 
 
 ## Repositorios remotos alternativos
