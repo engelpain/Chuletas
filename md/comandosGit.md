@@ -26,6 +26,7 @@ Fecha de Elaboración: 05-09-2017 (dd,mm,aaaa)
 1. [Commit](#commit)
 1. [Logs](#logs)
 1. [Ramas](#ramas)
+1. [Fusión de ramas](#fusi%C3%B3n-de-ramas)
 1. [Repositorios remotos alternativos](#repositorios-remotos-alternativos)
 
 
@@ -142,3 +143,18 @@ Fecha de Elaboración: 05-09-2017 (dd,mm,aaaa)
 * Agregar repositorio alternativo: `$ git remote add backup git://sub.dominio.com/repo.git`
 * Bajar cambios del repositorio alternativo: `$ git pull backup rama`
 * Subir cambios al repositorio alternativo: `$ git push backup rama`
+
+
+## Alias
+Luego de aprender todo lo que tiene git para ofrecer respecto a funcionalidades, a veces se pueden crear comandos muy largos para acciones específicas,
+pero el objetivo de git es facilitar nuestra vida, no complicarla, por tanto ofrece la creación de alias para usar comandos largos sin necesidad de escribir todas las flags requeridas.
+
+* Para crear un alias: `git config alias.nombre-alias 'comando flags'`
+* Para eliminar un alias: `git config --unset alias.nombre-alias`
+> Nota: para que los cambios surjan efecto global se debe usar el _flag_ **--global**).
+
+* Un ejemplo de creación de alias: `git config alias.graph 'log --all --graph --pretty=short'`
+> Nota importante: Se debe escribir los comandos siempre entre comillas simples.
+
+Cabe destacar que cuando se invoca este alias en la consola, también se pueden agregar más flags al final. Siguiendo el ejemplo anterior se podría usar `git graph` y agregarle un flag, por ejemplo `--decorate`, para invocar al final a `git graph --decorate`, y este comando haría la suma de todos las flags del alias más la agregada después.
+
