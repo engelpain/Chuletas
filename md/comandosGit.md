@@ -106,12 +106,20 @@ Fecha de Elaboración: 05-09-2017 (dd,mm,aaaa)
 
 
 ## Logs
-* Normal: `$ git log`
+* Ver log del repositorio: `$ git log`
+* Detallado (cambios en cada archivo): `$ git log -p`
+* Detallado por commit específico (cambios en cada archivo): `$ git log -p hash-del-commit`
+
+### Flags útiles
 * Simplificado: `$ git log --oneline`
 * Detallado (nombres de los archivos modificados): `$ git log --name-only`
 * Detallado (nombres de los archivos y de cambios): `$ git log --stat`
-* Detallado (cambios en cada archivo): `$ git log -p`
-* Detallado por commit específico (cambios en cada archivo): `$ git log -p hash-del-commit`
+* Todos los cambios en todas la ramas: `git log --all`
+* Crear un gráfico de las ramas: `git log --graph`
+
+### Uniones de flags útiles
+* Una corta de ver el árbol de commits: `git log --oneline --all --graph`
+* Forma estilizada y levemente más detallada: `git log --all --graph --pretty=short`
 
 
 ## Ramas
@@ -121,9 +129,13 @@ Fecha de Elaboración: 05-09-2017 (dd,mm,aaaa)
 * Cambiar nombre a una rama: `$ git branch -m nombre-rama nuevo-nombre`
 * Eliminar una rama: `$ git branch -d nombre-rama`
 
-## Otras configuraciones con git-branch y git-checkout
+### Otros usos de git-branch y git-checkout
 * Cambiar a un commit anterior: `$ git checkout commit-id`
 * Configurar un repositorio remoto y rama predeterminado para su local actual: `$ git branch --set-upstream-to=origin/master master`
+
+
+## Fusión de ramas
+* Fusionar una rama con otra: `git merge nombre-rama`
 
 
 ## Repositorios remotos alternativos
