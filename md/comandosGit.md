@@ -27,6 +27,7 @@ Fecha de Elaboración: 05-09-2017 (dd,mm,aaaa)
 1. [Logs](#logs)
 1. [Ramas](#ramas)
 1. [Fusión de ramas](#fusi%C3%B3n-de-ramas)
+1. [Etiquetas](#etiquetas)
 1. [Repositorios remotos alternativos](#repositorios-remotos-alternativos)
 
 
@@ -137,6 +138,13 @@ Fecha de Elaboración: 05-09-2017 (dd,mm,aaaa)
 
 ## Fusión de ramas
 * Fusionar una rama con otra: `git merge nombre-rama`
+
+
+## Etiquetas
+* Crear una etiqueta: `git tag nombre-etiqueta id-commit`
+* Eliminar una etiqueta: `git tag -d nombre-etiqueta`
+* Listar etiquetas: `git tag`
+* * Listar etiquetas específicas: ` -l "title-like*"`
 
 
 ## Repositorios remotos alternativos
