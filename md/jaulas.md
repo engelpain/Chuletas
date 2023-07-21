@@ -36,8 +36,11 @@ Son útiles cuando se requiere probar versiones de programas que tienen dependen
    existe y crea el directorio padre si es necesario.
 3. Descargar el sistema desde los repositorios Debian
    * `# debootstrap jessie /jaulas/jessie ​http://ftp.us.debian.org/debian/`
-4. Una vez descargado se debe importar el `proc` de la máquina anfitrión a la jaula.
+4. Una vez descargado se debe importar el `proc`,  de la máquina anfitrión a la jaula.
    * `# mount -t proc proc /jaulas/jessie/proc`
+   * `# mount -t sysfs /sys /jaulas/jessie/sys`
+   * `# mount --bind /dev /jaulas/jessie/dev`
+   * `# mount --bind /dev/pts /jaulas/jessie/dev/pts`
    * **Nota:** Cada vez que se reinicia el equipo hay que montar el `proc`, para automatizar este
    paso y que sea montado cada vez que se inicie el equipo se puede modificar el fichero 
    `/etc/fstab` con la siguiente instrucción:
