@@ -1,42 +1,26 @@
-# Angular 6
-Centro Nacional de Desarrollo e Investigación de Tecnologías Libres (CENDITEL) <br>
-[CENDITEL](https://www.cenditel.gob.ve/), Mérida - Venezuela<br>
-Dirección de Desarrollo<br>
+# Guía de Angular
 Autor: [Ing. Angelo Osorio](https://twitter.com/Engel_PAIN)<br>
-Fecha de Elaboración: 31-08-2018 (dd,mm,aaaa)
 
-
-
-## Notas del autor
-El símbolo al principio de una línea de comandos indica:
-```
-   $ = hacer la sentencia como usuario
-   # = hacer la sentencia como administrador
-```
-
-
-### Requisitos
+## Requisitos
 * Tener instalado [NodeJS](https://nodejs.org/es/)
    * Opción 1: [Instalación para sistemas basados en Debian](https://github.com/engelpain/Chuletas/blob/master/md/nodejs.md)
    * Opción 2: [Instalación usando un gestor de paquetes](https://github.com/engelpain/Chuletas/blob/master/md/nodejs.md)
    * Opción 3: [Descarga del instalador](https://nodejs.org/es/download/current/)
 
-
-### Instalar Angular CLI en NodeJS, para proyectos con Angular 6
-* **Nota**: En caso de tener una instalación anterior de Angular CLI, desinstalar para evitar conflictos:
-   * `# npm unistall -g angular-cli`
-   * `# npm unistall -g @angular/cli`
-   * `# npm cache clean`
+## Instalar Angular CLI con NPM (paquete de NodeJS)
 * Instalar la última versión de Angular CLI
-   * `# npm install -g @angular/cli`
+   * `$ npm install -g @angular/cli`
+* **Nota**: En caso de tener una instalación anterior de Angular CLI, desinstalarla para evitar conflictos:
+   * `$ npm unistall -g @angular/cli`
+   * `$ npm cache clean`
 
-### Mi primer proyecto en Angular 6
-#### 1. Crear un proyecto
-1. Generar el nuevo proyecto
-   * `$ ng new my-app`
-2. Entrar al directorio recién generado
-   * `$ cd my-app`
-3. Servir la aplicación
+## Guía rápida y comandos útiles de Angular
+
+### Generar el nuevo proyecto
+* `$ ng new my-app`
+
+### Servir la aplicación en local
+* La aplicación tiene varias formas de servirse dependiendo de lo que se necesite, la más normal sería así:
    * Forma 1: `$ ng serve -o`
    * Forma 2: `$ npm start`
 
@@ -48,7 +32,7 @@ export class AppComponent {
 }
 ```
 
-#### 3. Componentes en Angular 6
+#### 3. Componentes en Angular
 En Angular todo trata de componentes, dentro de estos es donde "ocurre la magia", donde se cargan los
 datos, de realizan los filtrados, donde se muestran las consultas. En `./src/app/app.component.ts` es
 donde se agregan los componentes de las aplicaciones.
