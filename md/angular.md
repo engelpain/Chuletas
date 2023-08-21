@@ -9,10 +9,14 @@ Autor: [Ing. Angelo Osorio](https://twitter.com/Engel_PAIN)<br>
 
 ## Instalar Angular CLI con NPM (paquete de NodeJS)
 * Instalar la última versión de Angular CLI
-   * `$ npm install -g @angular/cli`
+   * `npm install -g @angular/cli`
 * **Nota**: En caso de tener una instalación anterior de Angular CLI, desinstalarla para evitar conflictos:
-   * `$ npm unistall -g @angular/cli`
-   * `$ npm cache clean`
+   * `npm unistall -g @angular/cli`
+   * `npm cache clean`
+* También se puede usar angular sin necesidad de instalarlo globlamente, con npx, pero es un poco más tedioso:
+   * `npm install @angular/cli`
+   * `npx -p @angular/cli version`
+
 
 ## Guía rápida y comandos útiles de Angular
 
@@ -57,3 +61,8 @@ export class AppComponent {
   title = 'Mi primer proyecto en Angular 6';
 }
 ```
+
+### Instalar Tailwind CSS
+
+
+> Extraído de su [guía oficial](https://tailwindcss.com/docs/guides/angular)
