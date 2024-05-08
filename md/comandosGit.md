@@ -1,18 +1,5 @@
 # Guía de utilización de GIT
-Centro Nacional de Desarrollo e Investigación de Tecnologías Libres (CENDITEL) <br>
-[CENDITEL](https://www.cenditel.gob.ve/), Mérida - Venezuela<br>
-Dirección de Desarrollo<br>
-Autor: [Ing. Angelo Osorio](https://twitter.com/Engel_PAIN)<br>
-Fecha de Elaboración: 05-09-2017 (dd,mm,aaaa)
-
-
-## Notas del autor
->El símbolo al principio de una línea de comandos indica:
-```
-   $ = hacer la sentencia como usuario
-   # = hacer la sentencia como administrador
-```
-
+Autor: [Ing. Angelo Osorio](https://twitter.com/Engel_PAIN)
 
 ## Índice
 1. [Guía rápida](#guía-rápida)
@@ -27,95 +14,95 @@ Fecha de Elaboración: 05-09-2017 (dd,mm,aaaa)
 1. [Logs](#logs)
 1. [Ramas](#ramas)
 1. [Fusión de ramas](#fusi%C3%B3n-de-ramas)
+1. [Stash](#stash)
 1. [Etiquetas](#etiquetas)
 1. [Repositorios remotos alternativos](#repositorios-remotos-alternativos)
 
 
 ## Guía rápida
-1. Siempre hacer pull antes de subir cualquier cambio (nadie quiere borrar el trabajo de otros): `$ git pull"`
-2. Añadir cambios: `$ git add .` (En referencia al directorio actual)
-3. Nota descriptiva de los cambios realizados: `$ git commit -m "Descripción del commit"`
-4. Subir los archivos al repositorio: `$ git push`
-
+1. Siempre hacer pull antes de subir cualquier cambio (nadie quiere borrar el trabajo de otros): `git pull"`
+2. Añadir cambios: `git add ruta/del/archivo`
+3. Nota descriptiva de los cambios realizados: `git commit -m "Texto que detalla qué se hizo en el cambio"`
+4. Subir los archivos al repositorio: `git push`
+5. Descargar cambios con conflictos en la rama:
+   1. Guardar los cambios que se tienen pendientes: `git stash`
+   2. Solicitar los cambios de la rama: `git pull`
+   3. Incorporar los cambios pendientes sobre los recién descargados: `git stash pop`
 
 ## Gestión de Usuario
-* Configurar **Nombre del usuario**: `$ git config user.name "Angelo Osorio"`
-* Configurar **correo electrónico**: `$ git config user.email sample@example.com`
-* Configurar **editos**: `$ git config core.editor "nombreeditor"`
+* Configurar **Nombre del usuario**: `git config user.name "Angelo Osorio"`
+* Configurar **correo electrónico**: `git config user.email sample@example.com`
+* Configurar **editos**: `git config core.editor "nombreeditor"`
 * Almacenar sus credenciales de inicio de sesión en Git:
    * Modo **caché** (almacena las credenciales por 15 minutos):
-      * `$ git config credential.helper cache`
+      * `git config credential.helper cache`
    * Modo **store** (almacena las credenciales en un archivo, sin límite de tiempo):
-      * `$ git config credential.helper store --file ~/.mis-credenciales`
+      * `git config credential.helper store --file ~/.mis-credenciales`
    * Modo **store** (almacena las credenciales en el gestor interno del sistema operativo, sin límite de tiempo):
-      * `$ git config credential.helper store
-* Mostrar configuración actual: `$ git config -l`
+      * `git config credential.helper store`
+* Mostrar configuración actual: `git config -l`
 > Nota: para que los cambios surjan efecto global se debe usar el _flag_ **--global**).
 
 
 ## Crear un repositorio local
-1. Crear un directorio: `$ mkdir prueba`
-2. Entrar al directorio: `$ cd prueba`
-3. Dentro del directorio ejecutar el comando para iniciar un repositorio: `$ git init`
-4. Añada la ruta del repositorio remoto: `$ git remote git://sub.dominio.com/repo.git`
+1. Crear un directorio: `mkdir prueba`
+2. Entrar al directorio: `cd prueba`
+3. Dentro del directorio ejecutar el comando para iniciar un repositorio: `git init`
+4. Añada la ruta del repositorio remoto: `git remote git://sub.dominio.com/repo.git`
 
 
 ## Clonar un repositorio
-* Clonar un repositorio: `$ git clone git://sub.dominio.com/repo.git`
-* Clonar solo una rama específica del repositorio: `$ git clone -b mybranch git://sub.dominio.com/repo.git`
-* Clonar un repositorio en un directorio: `$ git clone git://sub.dominio.com/repo.git nombredeldirectorio`
-* Clonar un repositorio con x cantidad de commits tras el último: `$ git clone --depth=50 git://sub.dominio.com/repo.git`
+* Clonar un repositorio: `git clone git://sub.dominio.com/repo.git`
+* Clonar solo una rama específica del repositorio: `git clone -b mybranch git://sub.dominio.com/repo.git`
+* Clonar un repositorio en un directorio: `git clone git://sub.dominio.com/repo.git nombredeldirectorio`
+* Clonar un repositorio con x cantidad de commits tras el último: `git clone --depth=50 git://sub.dominio.com/repo.git`
 > En este ejemplo el repositorio será clonado con los últimos 50 commits.
 
 
 ## Sincronización
-* Revisar si hay cambios en el repositorio: `$ git pull`
+* Revisar si hay cambios en el repositorio: `git pull`
 * Revisar el estado de una rama:
-   * Forma normal: `$ git status`
-   * Forma simplificado: `$ git status -s`
-* Descargar cambios con conflictos en la rama
-   1. Guardar los cambios que se tienen pendientes: `$ git stash`
-   2. Solicitar los cambios de la rama: `$ git pull`
-   3. Incorporar los cambios pendientes sobre los recién descargados: `$ git stash pop`
-
+   * Forma normal: `git status`
+   * Forma simplificado: `git status -s`
 
 ## Añadir cambios
 * Añadir todos los archivos del directorio:
-   * Forma 1: `$ git add --all`
-   * Forma 2: `$ git add *`
-   * Forma 3: `$ git add .` (En referencia al directorio actual)
-* Añadir archivos específicos:  `$ git add ruta-relativa/archivo.extension`
-* Añadir todos los archivos con una extensión específica: `$ git add *.extensión`
-* Añadir todos los archivos que comiencen con 'fil': `$ git add fil*`
+   * Forma 1: `git add --all`
+   * Forma 2: `git add *`
+   * Forma 3: `git add .` (En referencia al directorio actual)
+* Añadir archivos específicos:  `git add ruta-relativa/archivo.extension`
+* Añadir todos los archivos con una extensión específica: `git add *.extensión`
+* Añadir todos los archivos que comiencen con 'fil': `git add fil*`
 
 
 ## Ver cambios
-* Cambios hechos en archivos existentes: `$ git diff`
-* Comparar commits: `$ git diff commit-id-1 commit-id-2`
+* Cambios hechos en archivos existentes: `git diff`
+* Comparar commits: `git diff commit-id-1 commit-id-2`
 
 
 ## Desechar cambios
-* De un archivo: `$ git checkout -- <file>`
-* Todos los archivos: `$ git reset --hard`
+* De un archivo: `git checkout -- <file>`
+* Todos los archivos: `git reset --hard`
 
 
 ## Commit
+Los commits son mensajes que se refrejan lo que hace un cambio, se recomienda que sea información detallada y en humano, cosas como "cambios", o "fix", solo crearán conflictos a la hora de juzgar su utilidad. Por lo general se busca que se de a entender qué se hizo y dónde se hizo para dar una vista general de su propósito, datos muy recomendados si se trabaja en equipos de más de una persona.
 * Commitear cambios
-   * Forma normal: `$ git commit`
-   * Forma simplificada: `$ git commit -m "mensaje"`
-* Arreglar el mensaje del último commit: `$ git commit --amend`
-* Deshacer el último commit (pushed): `$ git reset --soft HEAD~1`
+   * Forma normal: `git commit`
+   * Forma simplificada: `git commit -m "mensaje"`
+* Arreglar el mensaje del último commit: `git commit --amend`
+* Deshacer el último commit (pushed): `git reset --soft HEAD~1`
 
 
 ## Logs
-* Ver log del repositorio: `$ git log`
-* Detallado (cambios en cada archivo): `$ git log -p`
-* Detallado por commit específico (cambios en cada archivo): `$ git log -p hash-del-commit`
+* Ver log del repositorio: `git log`
+* Detallado (cambios en cada archivo): `git log -p`
+* Detallado por commit específico (cambios en cada archivo): `git log -p hash-del-commit`
 
 ### Flags útiles
-* Simplificado: `$ git log --oneline`
-* Detallado (nombres de los archivos modificados): `$ git log --name-only`
-* Detallado (nombres de los archivos y de cambios): `$ git log --stat`
+* Simplificado: `git log --oneline`
+* Detallado (nombres de los archivos modificados): `git log --name-only`
+* Detallado (nombres de los archivos y de cambios): `git log --stat`
 * Todos los cambios en todas la ramas: `git log --all`
 * Crear un gráfico de las ramas: `git log --graph`
 
@@ -125,19 +112,32 @@ Fecha de Elaboración: 05-09-2017 (dd,mm,aaaa)
 
 
 ## Ramas
-* Listar las ramas del repositorio: `$ git branch`
-* Crear una rama: `$ git checkout -b nueva-rama`
-* Cambiar de rama: `$ git checkout rama`
-* Cambiar nombre a una rama: `$ git branch -m nombre-rama nuevo-nombre`
-* Eliminar una rama: `$ git branch -d nombre-rama`
+* Listar las ramas del repositorio: `git branch`
+* Crear una rama: `git checkout -b nueva-rama`
+* Cambiar de rama: `git checkout rama`
+* Cambiar nombre a una rama: `git branch -m nombre-rama nuevo-nombre`
+* Eliminar una rama: `git branch -d nombre-rama`
 
 ### Otros usos de git-branch y git-checkout
-* Cambiar a un commit anterior: `$ git checkout commit-id`
-* Configurar un repositorio remoto y rama predeterminado para su local actual: `$ git branch --set-upstream-to=origin/master master`
+* Cambiar a un commit anterior: `git checkout commit-id`
+* Configurar un repositorio remoto y rama predeterminado para su local actual: `git branch --set-upstream-to=origin/master master`
 
 
 ## Fusión de ramas
 * Fusionar una rama con otra: `git merge nombre-rama`
+
+
+# Stash
+A veces se tienen cambios que por alguna razón no se quiere commitear y están dando conflicto con alguno del repositorio, para ello está git stash, un contenedor de cambios.
+* **Guardar** todos los cambios del repositorio a un stash: `git stash`
+   * Guardar solo los cambios seleccionados en el stage al stash: `git stash push -S -m "texto "`
+* **Listar** todos los stash del proyecto: `git stash list`
+* **Aplicar** los cambios del último stash sin borrarlo: `git stash apply`
+   * Aplicar los de un stash específico sin borrarlo: `git stash apply stash@{númerodestash}`
+* **Borrar** los cambios del último stash: `git stash drop`
+   * Borrarlos de un stash específico: `git stash drop stash@{númerodestash}`
+* **Aplicar** y **Borrar** los cambios del último stash: `git stash drop`
+   * Aplicar y borrar los de un stash específico: `git stash drop stash@{númerodestash}`
 
 
 ## Etiquetas
@@ -148,9 +148,11 @@ Fecha de Elaboración: 05-09-2017 (dd,mm,aaaa)
 
 
 ## Repositorios remotos alternativos
-* Agregar repositorio alternativo: `$ git remote add backup git://sub.dominio.com/repo.git`
-* Bajar cambios del repositorio alternativo: `$ git pull backup rama`
-* Subir cambios al repositorio alternativo: `$ git push backup rama`
+Git ofrece la posibilidad de tener más de un repositorio, solo se debe especificar
+
+* Agregar repositorio alternativo: `git remote add backup git://sub.dominio.com/repo.git`
+* Bajar cambios del repositorio alternativo: `git pull backup rama`
+* Subir cambios al repositorio alternativo: `git push backup rama`
 
 
 ## Alias
