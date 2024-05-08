@@ -133,11 +133,11 @@ A veces se tienen cambios que por alguna razón no se quiere commitear y están 
    * Guardar solo los cambios seleccionados en el stage al stash: `git stash push -S -m "texto "`
 * **Listar** todos los stash del proyecto: `git stash list`
 * **Aplicar** los cambios del último stash sin borrarlo: `git stash apply`
-   * Aplicar los de un stash específico sin borrarlo: `git stash apply stash@{númerodestash}`
+   * Aplicar un stash específico sin borrarlo: `git stash apply stash@{númerodestash}`
 * **Borrar** los cambios del último stash: `git stash drop`
-   * Borrarlos de un stash específico: `git stash drop stash@{númerodestash}`
+   * Borrar un stash específico: `git stash drop stash@{númerodestash}`
 * **Aplicar** y **Borrar** los cambios del último stash: `git stash drop`
-   * Aplicar y borrar los de un stash específico: `git stash drop stash@{númerodestash}`
+   * Aplicar y borrar un stash específico: `git stash drop stash@{númerodestash}`
 
 
 ## Etiquetas
