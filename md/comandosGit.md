@@ -32,7 +32,8 @@ Autor: [Ing. Angelo Osorio](https://twitter.com/Engel_PAIN)
 ## Gestión de Usuario
 * Configurar **Nombre del usuario**: `git config user.name "Angelo Osorio"`
 * Configurar **correo electrónico**: `git config user.email sample@example.com`
-* Configurar **editos**: `git config core.editor "nombreeditor"`
+* Configurar **editor**: `git config core.editor "nombreeditor"`
+> Nota: Agregando la flag `--global` a los comandos anteriores, la configuración se modifica para todos los repositorios
 * Almacenar sus credenciales de inicio de sesión en Git:
    * Modo **caché** (almacena las credenciales por 15 minutos):
       * `git config credential.helper cache`
