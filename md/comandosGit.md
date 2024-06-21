@@ -33,7 +33,6 @@ Autor: [Ing. Angelo Osorio](https://twitter.com/Engel_PAIN)
 * Configurar **Nombre del usuario**: `git config user.name "Angelo Osorio"`
 * Configurar **correo electrónico**: `git config user.email sample@example.com`
 * Configurar **editor**: `git config core.editor "nombreeditor"`
-> Nota: Agregando la flag `--global` a los comandos anteriores, la configuración se modifica para todos los repositorios
 * Almacenar sus credenciales de inicio de sesión en Git:
    * Modo **caché** (almacena las credenciales por 15 minutos):
       * `git config credential.helper cache`
@@ -42,7 +41,7 @@ Autor: [Ing. Angelo Osorio](https://twitter.com/Engel_PAIN)
    * Modo **store** (almacena las credenciales en el gestor interno del sistema operativo, sin límite de tiempo):
       * `git config credential.helper store`
 * Mostrar configuración actual: `git config -l`
-> Nota: para que los cambios surjan efecto global se debe usar el _flag_ **--global**).
+> Nota: Agregando la flag `--global` a los comandos anteriores, la configuración se modifica para todos los repositorios
 
 
 ## Crear un repositorio local
