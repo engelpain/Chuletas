@@ -91,7 +91,7 @@ Los commits son mensajes que se refrejan lo que hace un cambio, se recomienda qu
    * Forma normal: `git commit`
    * Forma simplificada: `git commit -m "mensaje"`
 * Arreglar el mensaje del último commit: `git commit --amend`
-* Deshacer el último commit (pushed): `git reset --soft HEAD~1`
+* Deshacer el último commit (commited): `git reset --soft HEAD~1`
 
 
 ## Logs
